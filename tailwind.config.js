@@ -11,7 +11,8 @@ module.exports = {
     extend: {
       fontFamily: {
         Rilway: '"Raleway", sans-serif',
-        Prata: '"Prata", serif'
+        Prata: '"Prata", serif',
+        Oswald: '"Oswald", sans-serif'
       }
     },
   },

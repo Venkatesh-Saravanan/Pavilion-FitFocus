@@ -10,7 +10,7 @@ import bg1 from "../../../public/bg2.gif";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <Helmet>
         <title>PlateSwap | Home</title>
       </Helmet>
@@ -33,7 +33,7 @@ const Home = () => {
             <div
               className="bg-cover mr-0 bg-center hero w-full h-[580px] bg-gradient-to-r from-slate-900 to-black"
               style={{
-                backgroundImage: `url(${bg})`,
+                backgroundImage: `url(${bg1})`,
               }}
             >
               <div className="hero-content text-center text-neutral-content animate__animated animate__fadeInUp animate__slower">
@@ -52,7 +52,7 @@ const Home = () => {
             <div
               className="bg-cover mr-0 bg-center hero w-full h-[580px] bg-gradient-to-r from-slate-900 to-black"
               style={{
-                backgroundImage: `url(${bg1})`,
+                backgroundImage: `url(${bg})`,
               }}
             >
               <div className="hero-content text-center text-neutral-content animate__animated animate__fadeInUp animate__slower">

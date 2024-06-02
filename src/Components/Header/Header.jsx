@@ -1,28 +1,26 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import '../../Styles/Header.css';
-import { IoIosHome, IoMdCall } from "react-icons/io";
 import UseAuth from "../../Hook/useAuth";
-import { MdAttachEmail, MdEventAvailable, MdOutlineAdd } from "react-icons/md";
-import { HiArchiveBox } from "react-icons/hi2";
+
 import { FcInvite } from "react-icons/fc";
 const Header = () => {
   const { user, logOut } = UseAuth();
   const navigate = useNavigate();
 
   return (
-    <div className="shadow-2xl w-full font-Rilway   ">
+    <div className="shadow-2xl w-full font-Rilway container mx-auto  ">
 {/* upper navbar */}
      
 
 
-      <div className="m-0 p-0 ">
+      <div className="m-0 p-0 shadow-2xl z-10 ">
         <Navbar fluid rounded>
           <Navbar.Brand href="#">
             <img src="https://i.ibb.co/zXvSWPK/logo-removebg-preview.png" className="w-15 mr-3 lg:ml-10 h-15 sm:h-9" alt="PlateswapLogo" />
             <span className="self-center uppercase whitespace-nowrap text-2xl font-semibold dark:text-white italic">FitFocus</span>
           </Navbar.Brand>
-          <div className="flex md:order-2">
+          <div className="flex md:order-2 ">
             {user ? (
               <Dropdown arrowIcon={false} inline label={<Avatar img={user.photoURL} rounded className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" />}>
 
@@ -65,7 +63,7 @@ const Header = () => {
           </div>
 
       {/* navbar     */}
-          <Navbar.Collapse>
+          <Navbar.Collapse className="">
             <NavLink to="/" className="font-normal text-base" href="#" activeClassName="active">
               <div className="flex items-center  justify-center">
                 <span>Home</span>
