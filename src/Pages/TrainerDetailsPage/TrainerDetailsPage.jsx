@@ -1,12 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { axiosSecure } from "../../Hook/useAxiosSecure";
 
 
 const TrainerDetailsPage = () => {
     const id = useParams()
     console.log(id.id)
-    const history = useHistory
+    const navigate = useNavigate()
+
+    const handleButtonClick = (id,time, slot) => {
+        navigate(`/trainers/${id}/${time}/${slot}`);
+      };
     const { data, isLoading, error } = useQuery({
         queryKey: ['TrainerDetails'],
         queryFn: async () => {
@@ -23,7 +27,10 @@ const TrainerDetailsPage = () => {
                     <h1 className="text-5xl font-bold leading-none text-center font-Prata">Be A Trainer</h1>
                     <p className="text-xl font-medium text-center">At FitFocus, we pride ourselves on having an elite team of dedicated trainers who are passionate about helping you achieve your fitness goals. </p>
                     <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
+                        <Link to={"/beATrainer"}>
                         <button className="px-8 py-3 text-lg font-semibold rounded bg-[#2F7955]  text-gray-50 dark:text-gray-900">Get started</button>
+                        </Link>
+                        
                     </div>
                 </div>
             </section>
@@ -72,7 +79,7 @@ const TrainerDetailsPage = () => {
                                 <span className="text-sm text-center text-gray-400 dark:text-gray-600">sat-sun-wed</span>
                                 
                             </div>
-                            <Link to={`/trainers/${id.id}/10:00- 12:30/sat-sun-wed`}>
+                            <Link onClick={()=>handleButtonClick(id.id,'10:00-12:30','sat-sun-wed')} to={`/trainers/${id.id}/10:00-12:30/sat-sun-wed`}>
                             <button className="px-8 py-3 text-lg font-semibold rounded bg-[#2F7955]  text-gray-50 dark:text-gray-900">Booking</button>
                             </Link>
                             

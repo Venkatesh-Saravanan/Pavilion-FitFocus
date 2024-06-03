@@ -8,6 +8,8 @@ import Home from "../Pages/Home/Home";
 import BeATrainer from "../Components/BeATrainer/BeATrainer";
 import AllTrainer from "../Pages/AllTrainer/AllTrainer";
 import TrainerDetailsPage from "../Pages/TrainerDetailsPage/TrainerDetailsPage";
+import TrainerBookedPage from "../Pages/Trainer-Booked-Page/TrainerBookedPage";
+import Deshboard from "../Pages/Deshboard/Deshboard";
 
   const router = createBrowserRouter([
     {
@@ -23,7 +25,7 @@ import TrainerDetailsPage from "../Pages/TrainerDetailsPage/TrainerDetailsPage";
             element:<Login></Login>
         },
         {
-          path:"/be",
+          path:"/beATrainer",
           element: <BeATrainer/>
         },
         {
@@ -33,9 +35,17 @@ import TrainerDetailsPage from "../Pages/TrainerDetailsPage/TrainerDetailsPage";
         {
           path:"/trainers/:id",
           element: <TrainerDetailsPage></TrainerDetailsPage>
+        },
+        {
+          path:"/trainers/:id/:time/:slot",
+          element:<TrainerBookedPage></TrainerBookedPage>
         }
       ]
     },
+    {
+      path:"/deshboard",
+      element:<Deshboard></Deshboard>
+    }
   ]);
 
 export default router;

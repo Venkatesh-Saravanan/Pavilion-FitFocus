@@ -22,7 +22,7 @@ const BeATrainer = () => {
   const onSubmit = (data) => {
     // Handle form submission here
     console.log(data);
-    axiosSecure.post('/trainers',data,{
+    axiosSecure.post('/RequestToBeTrainer',data,{
     headers: {
         "Content-Type": 'Application/json'
     }
