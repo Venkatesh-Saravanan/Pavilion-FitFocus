@@ -25,7 +25,7 @@ const FeatureSection = () => {
 
             {
                 data?.map(singleData => <>
-                <div className="">
+                <div className="  scale-90 hover:scale-95 transition-transform duration-300 ease-in-out">
                     <section className="p-6 shadow-lg mb-5 h-[380px] bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 ">
                         <div className="container mx-auto  text-center lg:grid-cols-3 flex justify-center items-center">
                             <div className="flex flex-col justify-start m-2 lg:m-6">

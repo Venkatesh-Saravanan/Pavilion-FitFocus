@@ -31,14 +31,14 @@ const Header = () => {
                 <Dropdown.Item className="">
                   <Link to={`/MyFoods/${user.email}`} className=" " href="#" activeClassName="active">
                     <div className="flex items-center gap-1 justify-center">
-                      <span>Added Foods</span>
+                      <span></span>
                     </div>
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <Link to={`/MyFoodsRequest/${user.email}`} className="" href="#" activeClassName="active">
                     <div className="flex items-center gap-1 justify-center">
-                      <span>Requested Food </span>
+                      <span></span>
                     </div>
                   </Link>
                 </Dropdown.Item>
@@ -71,14 +71,14 @@ const Header = () => {
             </NavLink>
             <div className="border-r-2"></div>
 
-            <NavLink to="/AvailableFoods" className="font-normal text-base" href="#" activeClassName="active">
+            <NavLink to="/trainers" className="font-normal text-base" href="#" activeClassName="active">
               <div className="flex items-center gap-1 justify-center">
                
                 <span>All Trainer Page</span>
               </div>
             </NavLink>
             <div className="border-r-2"></div>
-            <NavLink to="/AvailableFoods" className="font-normal text-base" href="#" activeClassName="active">
+            <NavLink to="" className="font-normal text-base" href="#" activeClassName="active">
               <div className="flex items-center gap-1 justify-center">
                
                 <span>All Classes page</span>
@@ -98,24 +98,24 @@ const Header = () => {
             <div className="border-r-2"></div>
             {user &&
               <>
-                <NavLink to="/AddFood" className="font-normal text-base" href="#" activeClassName="active">
+                <NavLink to="#" className="font-normal text-base" href="#" activeClassName="active">
                   <div className="flex items-center gap-1 justify-center">
                     
-                    <span>Add Food</span>
+                    <span></span>
                   </div>
                 </NavLink>
                 <div className="border-r-2"></div>
                 <NavLink to={`/MyFoods/${user.email}`} className="font-normal text-base" href="#" activeClassName="active">
                   <div className="flex items-center gap-1 justify-center">
                    
-                    <span>My Foods</span>
+                    <span></span>
                   </div>
                 </NavLink>
                 <div className="border-r-2"></div>
                 <NavLink to={`/MyFoodsRequest/${user.email}`} className="font-normal text-base" href="#" activeClassName="active">
                   <div className="flex items-center gap-1 justify-center">
                     <FcInvite />
-                    <span>My Food Request </span>
+                    <span> </span>
                   </div>
                 </NavLink>
                 <div className="border-r-2"></div>
