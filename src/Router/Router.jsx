@@ -10,6 +10,8 @@ import AllTrainer from "../Pages/AllTrainer/AllTrainer";
 import TrainerDetailsPage from "../Pages/TrainerDetailsPage/TrainerDetailsPage";
 import TrainerBookedPage from "../Pages/Trainer-Booked-Page/TrainerBookedPage";
 import Deshboard from "../Pages/Deshboard/Deshboard";
+import AppliedTrainer from "../Pages/AppliedTrainer/AppliedTrainer";
+import Dashboard from "../Layout/Dashboard";
 
   const router = createBrowserRouter([
     {
@@ -44,7 +46,13 @@ import Deshboard from "../Pages/Deshboard/Deshboard";
     },
     {
       path:"/deshboard",
-      element:<Deshboard></Deshboard>
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:"/deshboard/appliedTrainer",
+          element:<AppliedTrainer></AppliedTrainer>
+        }
+      ]
     }
   ]);
 

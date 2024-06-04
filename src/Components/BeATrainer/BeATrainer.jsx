@@ -6,8 +6,8 @@ import { axiosSecure } from "../../Hook/useAxiosSecure";
 import { useState } from "react";
 
 const BeATrainer = () => {
-    const {user} = UseAuth()
-   
+  const { user } = UseAuth()
+
   const {
     register,
     setValue,
@@ -17,15 +17,15 @@ const BeATrainer = () => {
   const [skills, setSkills] = useState([]);
   if (user) {
     setValue('user_email', user.email || '')
-}
+  }
 
   const onSubmit = (data) => {
     // Handle form submission here
     console.log(data);
-    axiosSecure.post('/RequestToBeTrainer',data,{
-    headers: {
+    axiosSecure.post('/RequestToBeTrainer', data, {
+      headers: {
         "Content-Type": 'Application/json'
-    }
+      }
     })
   };
 
@@ -83,7 +83,28 @@ const BeATrainer = () => {
             )}
           </div>
 
-          
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Class</span>
+            </label>
+            <select
+              className="select select-bordered"
+              {...register("Class", { required: true })}
+            >
+              <option value="Yoga basic" selected>Yoga basic</option>
+              <option value="Fitness">Fitness</option>
+              <option value="Gym">Gym</option>
+              <option value="Zumba">Zumba</option>
+              <option value="Pilates">Pilates</option>
+              <option value="Cardio">Cardio</option>
+            </select>
+            {errors.Class && (
+              <p className="text-red-500 ml-1">Class is required</p>
+            )}
+          </div>
+
+
+
 
           {/* Age */}
           <div className="form-control">
@@ -101,34 +122,34 @@ const BeATrainer = () => {
 
           {/* Skills */}
           <div className="form-control">
-    <label className="label">
-        <span className="label-text">Skills (comma-separated)</span>
-    </label>
-    <input
-        type="text"
-        placeholder="Skills (comma-separated)"
-        className="input input-bordered"
-        {...register("skills", { required: true })}
-        onChange={(e) => setSkills(e.target.value.split(','))}
-    />
-    {errors.skills && (
-        <p className="text-red-500 ml-1">atleat two Skills are required and (comma-separated)</p>
-    )}
-</div>
+            <label className="label">
+              <span className="label-text">Skills (comma-separated)</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Skills (comma-separated)"
+              className="input input-bordered"
+              {...register("skills", { required: true })}
+              onChange={(e) => setSkills(e.target.value.split(','))}
+            />
+            {errors.skills && (
+              <p className="text-red-500 ml-1">atleat two Skills are required and (comma-separated)</p>
+            )}
+          </div>
 
 
           <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Selected Skills</span>
-                        </label>
-                        <div className="flex flex-wrap">
-                            {skills.map((skill, index) => (
-                                <div key={index} className="bg-gray-200 rounded-full px-2 py-1 mr-2 mb-2">
-                                    {skill}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+            <label className="label">
+              <span className="label-text">Selected Skills</span>
+            </label>
+            <div className="flex flex-wrap">
+              {skills.map((skill, index) => (
+                <div key={index} className="bg-gray-200 rounded-full px-2 py-1 mr-2 mb-2">
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Available Days a Week */}
           <div className="form-control">
@@ -156,7 +177,7 @@ const BeATrainer = () => {
               placeholder="Available Time in a Day"
               className="input input-bordered"
               {...register("availableTime", { required: true })}
-              
+
             />
             {errors.availableTime && (
               <p className="text-red-500 ml-1">Available Time in a Day is required</p>
@@ -186,7 +207,7 @@ const BeATrainer = () => {
               Sign Up
             </button>
           </div>
-          
+
         </form>
       </div>
     </div>

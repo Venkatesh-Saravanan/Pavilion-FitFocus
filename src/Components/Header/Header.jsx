@@ -98,10 +98,10 @@ const Header = () => {
             <div className="border-r-2"></div>
             {user &&
               <>
-                <NavLink to="#" className="font-normal text-base" href="#" activeClassName="active">
+                <NavLink to="/deshboard" className="font-normal text-base" href="#" activeClassName="active">
                   <div className="flex items-center gap-1 justify-center">
                     
-                    <span></span>
+                    <span>deshboard</span>
                   </div>
                 </NavLink>
                 <div className="border-r-2"></div>
