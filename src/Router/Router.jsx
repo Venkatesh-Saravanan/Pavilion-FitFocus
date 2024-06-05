@@ -12,6 +12,7 @@ import TrainerBookedPage from "../Pages/Trainer-Booked-Page/TrainerBookedPage";
 import Deshboard from "../Pages/Deshboard/Deshboard";
 import AppliedTrainer from "../Pages/AppliedTrainer/AppliedTrainer";
 import Dashboard from "../Layout/Dashboard";
+import Test from "../Pages/AppliedTrainer/Test";
 
   const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ import Dashboard from "../Layout/Dashboard";
         {
           path:"/deshboard/appliedTrainer",
           element:<AppliedTrainer></AppliedTrainer>
+        },
+        {
+          path:"/deshboard/test",
+          element:<Test></Test>
         }
       ]
     }

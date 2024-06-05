@@ -1,0 +1,55 @@
+import { useForm } from "react-hook-form";
+
+const NewsletterSection = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+   
+    const onSubmit = (data) => {
+        console.log(data); 
+      
+    };
+    return (
+        <div className="bg-gradient-to-r from-[#6cdbc0] to-white">
+            <div className="lg:grid grid-cols-2 ">
+                <div className="text-center  p-20">
+                    <h1 className="text-2xl font-bold font-Prata">Subscribe Our Newsletter</h1>
+                    <h1>Don't Miss Out! Subscribe to Our Newsletter for the Latest Updates, Exclusive Offers, and Insider Tips. Join Our Community Today and Stay Informed!</h1>
+                </div>
+                <div className="text-center p-20">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-control w-full">
+             
+              <input
+                type="text"
+                placeholder="Name"
+                className="input input-bordered bg-slate-200 mb-5"
+                {...register("name", { required: true })}
+              />
+              {errors.name && (
+                <p className="text-red-500 ml-1">Name is required.</p>
+              )}
+            </div>
+
+            <div className="form-control w-full">
+             
+              <input 
+                type="email"
+                placeholder={ "Email"}
+                className="input input-bordered bg-slate-200"
+                {...register("user_email", { required: true })}
+              />
+              {errors.email && (
+                <p className="text-red-500 ml-1">Email is required</p>
+              )}
+            </div>
+            {/* Submit button */}
+            <button className="btn text-white bg-[#10A37F] mt-5" type="submit">Subscribe</button>
+        </form>
+                </div>
+                
+            </div>
+        </div>
+    );
+};
+
+export default NewsletterSection;

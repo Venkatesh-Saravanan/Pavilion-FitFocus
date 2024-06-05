@@ -14,8 +14,8 @@ const TrainerDetailsPage = () => {
     const { data, isLoading, error } = useQuery({
         queryKey: ['TrainerDetails'],
         queryFn: async () => {
-            const res = axiosSecure.get(`/trainers/${id.id}`)
-            return (await res).data;
+            const res =await axiosSecure.get(`/trainers/${id.id}`)
+            return res.data;
         }
 
     })

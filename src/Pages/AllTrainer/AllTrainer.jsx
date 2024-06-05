@@ -8,7 +8,7 @@ const AllTrainer = () => {
     const {data,isLoading , error}= useQuery({
         queryKey: ['trainer'],
         queryFn: async()=>{
-            const res = await axiosSecure.get('/trainers')
+            const res = await axiosSecure.get('/trainer/trainer')
             return res.data
         }
     })
