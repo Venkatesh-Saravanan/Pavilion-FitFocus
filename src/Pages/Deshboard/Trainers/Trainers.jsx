@@ -6,7 +6,7 @@ import { FaDeleteLeft } from "react-icons/fa6";
 
 const Trainers = () => {
     const { data, isLoading, error, refetch } = useTrainers()
-   console.log(data)
+   
 
     const handleDlt = (_id, email) => {
         Swal.fire({
@@ -50,7 +50,7 @@ const Trainers = () => {
           }
         });
         };
-    console.log(data)
+        
     return (
         <div>
             <div>
@@ -75,7 +75,9 @@ const Trainers = () => {
                         {
                             data?.map(trainer => <>
                                 <tr>
-                                    
+                                    {
+                                        console.log(trainer.AvailableDaysAWeek)
+                                    }
                                     <td className="border border-black">{trainer.name}</td>
                                     <td className="border border-black">{trainer.age}</td>
                                     <td className="border m-2 border-black">

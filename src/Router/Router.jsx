@@ -17,6 +17,9 @@ import Newslatter from "../Pages/Newslatter/Newslatter";
 import TrainerDashboard from "../Pages/Trainer/TrainerDashboard";
 import Signup from "../Auth/SignUp/Signup";
 import Trainers from "../Pages/Deshboard/Trainers/Trainers";
+import AddNewSlot from "../Pages/Deshboard/AddNewSlot/AddNewSlot";
+import AddnewClass from "../Pages/Deshboard/AddnewClass/AddnewClass";
+import AllClasses from "../Pages/AllClasses/AllClasses";
 
   const router = createBrowserRouter([
     {
@@ -50,6 +53,10 @@ import Trainers from "../Pages/Deshboard/Trainers/Trainers";
         {
           path:"/trainers/:id/:time/:slot",
           element:<TrainerBookedPage></TrainerBookedPage>
+        },
+        {
+          path:"/allclass",
+          element:<AllClasses></AllClasses>
         }
       ]
     },
@@ -76,7 +83,15 @@ import Trainers from "../Pages/Deshboard/Trainers/Trainers";
         {
           path:"/deshboard/trainers",
           element:<Trainers></Trainers>
-        }
+        },
+        {
+          path:"/deshboard/addslot",
+          element:<AddNewSlot></AddNewSlot>
+        },
+        {
+          path:"/deshboard/addnewclass",
+          element:<AddnewClass></AddnewClass>
+        },
       ]
     }
   ]);

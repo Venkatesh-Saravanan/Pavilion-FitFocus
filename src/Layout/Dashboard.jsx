@@ -1,9 +1,25 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import DeshboardHeader from "../Components/DeshboardHeader/DeshboardHeader";
+import UseAuth from "../Hook/useAuth";
 
 
 const Dashboard = () => {
+    const { loading } = UseAuth();
+    if (loading) {
+// set loading
+        return <div className="bg-[#2F7955] h-screen flex justify-center items-center">
+            <div>
+                <span className=" text-white m-auto loading loading-spinner w-20"></span>
+                <div className="flex items-center justify-center  -ml-[30%]">
+
+                    <h1 className="mt-5 mr-10 tracking-widest text-[#FFFFFF] font-Prata font text-5xl">PLATE SWAP</h1>
+                </div>
+            </div>
+
+
+        </div>
+    }
     return (
         <>
         <DeshboardHeader></DeshboardHeader>

@@ -78,7 +78,7 @@ const Header = () => {
               </div>
             </NavLink>
             <div className="border-r-2"></div>
-            <NavLink to="" className="font-normal text-base" href="#" activeClassName="active">
+            <NavLink to="/allclass" className="font-normal text-base" href="#" activeClassName="active">
               <div className="flex items-center gap-1 justify-center">
                
                 <span>All Classes page</span>
