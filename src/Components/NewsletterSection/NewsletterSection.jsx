@@ -1,11 +1,31 @@
 import { useForm } from "react-hook-form";
-
+import { axiosSecure } from "../../Hook/useAxiosSecure";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  
 const NewsletterSection = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
    
     const onSubmit = (data) => {
-        console.log(data); 
+        console.log(data);
+        
+        axiosSecure.post("/newsLatter", {
+          ...data,
+          date: new Date().toISOString().split('T')[0]
+      }, {
+            headers: {
+                "Content-Type": 'application/json'
+            }
+        }).then(res=>{
+            console.log(res)
+            if(res.data.message==0){
+                  toast("User already exist");
+            }
+            else{
+                toast("NewsLatter Subscribe successful");
+            }
+        })
       
     };
     return (
@@ -48,6 +68,7 @@ const NewsletterSection = () => {
                 </div>
                 
             </div>
+            <ToastContainer />
         </div>
     );
 };

@@ -10,7 +10,7 @@ import bg1 from "../../../public/bg2.gif";
 
 const Home = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto ">
       <Helmet>
         <title>PlateSwap | Home</title>
       </Helmet>
@@ -29,9 +29,9 @@ const Home = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide className='bg-gradient-to-r from-slate-900 to-black '>
+          <SwiperSlide className='bg-gradient-to-r rounded-xl from-slate-900 to-black  '>
             <div
-              className="bg-cover mr-0 bg-center hero w-full h-[580px] bg-gradient-to-r from-slate-900 to-black"
+              className="bg-cover rounded-xl mr-0 bg-center hero w-full h-[580px] bg-gradient-to-r from-slate-900 to-black"
               style={{
                 backgroundImage: `url(${bg1})`,
               }}

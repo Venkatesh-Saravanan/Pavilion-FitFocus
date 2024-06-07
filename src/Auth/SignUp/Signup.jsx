@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import UseAuth from "../../Hook/useAuth";
+import { axiosSecure } from "../../Hook/useAxiosSecure";
 
 
 
@@ -45,8 +46,10 @@ console.log(data.email)
 //USER CREATE FUNCIONALITY
     createUser(data.email, data.password)
       .then((userCredential) => {
+        axiosSecure.post("/users", {...data, role:"user"})
         setLoading(false);
         const user = userCredential.user;
+        
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
             setUser({

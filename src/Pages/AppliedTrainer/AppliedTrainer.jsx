@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 import UseAuth from "../../Hook/useAuth";
 import { useEffect, useState } from "react";
 import SingleTrainers from "./SingleTrainers";
+import useTrainers from "../../Hook/useTrainers";
 
 const AppliedTrainer = () => {
+  
   const { data: datas, isLoading, error, refetch } = useQuery({
     queryKey: ['appliedTrainer'],
     queryFn: async () => {
@@ -38,9 +40,9 @@ const AppliedTrainer = () => {
 
   useEffect(() => {
     if (user) {
-      setValue('name', user.displayName || ''); // Set name if available
-      setValue('photoURL', user.photoURL || ''); // Set photoURL if available
-      setValue('user_email', user.email || ''); // Set email if available
+      setValue('name', user.displayName || ''); 
+      setValue('photoURL', user.photoURL || ''); 
+      setValue('user_email', user.email || ''); 
     }
     if(datas){
       setValue('age', datas.age || '');

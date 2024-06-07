@@ -13,6 +13,10 @@ import Deshboard from "../Pages/Deshboard/Deshboard";
 import AppliedTrainer from "../Pages/AppliedTrainer/AppliedTrainer";
 import Dashboard from "../Layout/Dashboard";
 import Test from "../Pages/AppliedTrainer/Test";
+import Newslatter from "../Pages/Newslatter/Newslatter";
+import TrainerDashboard from "../Pages/Trainer/TrainerDashboard";
+import Signup from "../Auth/SignUp/Signup";
+import Trainers from "../Pages/Deshboard/Trainers/Trainers";
 
   const router = createBrowserRouter([
     {
@@ -26,6 +30,10 @@ import Test from "../Pages/AppliedTrainer/Test";
         {
             path: "/login",
             element:<Login></Login>
+        },
+        {
+            path: "/signup",
+            element:<Signup></Signup>
         },
         {
           path:"/beATrainer",
@@ -56,6 +64,18 @@ import Test from "../Pages/AppliedTrainer/Test";
         {
           path:"/deshboard/test",
           element:<Test></Test>
+        },
+        {
+          path:"/deshboard/newslatter",
+          element: <Newslatter></Newslatter>
+        },
+        {
+          path:"/deshboard/trainer",
+          element:<TrainerDashboard></TrainerDashboard>
+        },
+        {
+          path:"/deshboard/trainers",
+          element:<Trainers></Trainers>
         }
       ]
     }

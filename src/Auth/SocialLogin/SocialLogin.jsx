@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UseAuth from "../../Hook/useAuth";
 import Swal from "sweetalert2";
+import { axiosSecure } from "../../Hook/useAxiosSecure";
 const SocialLogin = () => {
   
     const {googleLogin,githubLogin,setLoading} = UseAuth()
@@ -13,8 +14,16 @@ const SocialLogin = () => {
     const navigate = useNavigate()
    const handleGoogleLogin=()=>{
     googleLogin()
-    .then(()=>{
-        
+    .then((users)=>{
+        const data={
+            name : users.user.displayName,
+            email: users.user.email,
+            photoURL: users.user.photoURL, // Corrected here
+          role: "user"
+        }
+        console.log(data)
+        axiosSecure.post("/users", data)
+        console.log(users)
         navigate(location?.state ? location.state : "/");
         setLoading(false)
     })
@@ -27,8 +36,15 @@ const SocialLogin = () => {
    const handleGithubLogin=()=>{
    
     githubLogin()
-    .then(()=>{
-        
+    .then((users)=>{
+        const data={
+            name : users.user.displayName,
+            email: users.user.email,
+            photoURL: users.user.photoURL, // Corrected here
+          role: "user"
+        }
+        console.log(data)
+        axiosSecure.post("/users", data)
         navigate(location?.state ? location.state : "/");
         setLoading(false)
     })

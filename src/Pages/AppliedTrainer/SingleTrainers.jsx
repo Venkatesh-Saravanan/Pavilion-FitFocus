@@ -11,7 +11,6 @@ const SingleTrainers = ({ data,refetch }) => {
     const handleButtonClick = async (id) => {
         const response = await axiosSecure.get(`/trainers/${id}`);
         setSelectedTrainer(response.data);
-        // reset(response.data); // Set the form values to the selected trainer data
         setModalOpen(true);
     };
 
@@ -20,19 +19,23 @@ const SingleTrainers = ({ data,refetch }) => {
         setSelectedTrainer(null);
         reset();
     };
-    console.log(data.AvailableDaysAWeek)
+    
+
+  
     const onSubmit = async (fdata) => {
         try {
+            await axiosSecure.put(`/users/${fdata.email}`,{role:'trainer'}, {
+               
+            });
             console.log(fdata);
-    
-            // Make the PUT request to update the trainer
+            console.log(fdata.email)
             const response = await axiosSecure.put(`/trainers/${data._id}`, fdata, {
                 headers: {
                     "Content-Type": 'application/json'
                 }
             });
     
-            // Check if the response is successful
+            
             if (response.status === 200) {
                 Swal.fire({
                     icon: 'success',
@@ -57,6 +60,7 @@ const SingleTrainers = ({ data,refetch }) => {
     if (data) {
         setValue('name', data.name || '')
         setValue('age', data.age || '')
+        setValue('email', data.user_email || '')
         setValue('skills', data.skills || '')
         setValue('availableTime', data.availableTime || '')
         setValue('otherInfo', data.otherInfo || '')
@@ -127,6 +131,14 @@ const SingleTrainers = ({ data,refetch }) => {
                                         type="number"
                                         className="mt-1 block w-full"
                                         {...register("age")}
+                                    />
+                                </div>
+                                <div className="mb-4">
+                                    <label className="block text-sm font-medium text-gray-700">email</label>
+                                    <input
+                                        type="text"
+                                        className="mt-1 block w-full"
+                                        {...register("email")}
                                     />
                                 </div>
                                 <div className="mb-4">
