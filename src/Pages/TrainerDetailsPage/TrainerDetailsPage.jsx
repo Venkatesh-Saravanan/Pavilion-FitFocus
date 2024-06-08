@@ -8,18 +8,18 @@ const TrainerDetailsPage = () => {
     console.log(id.id)
     const navigate = useNavigate()
 
-    const handleButtonClick = (id,time, slot) => {
+    const handleButtonClick = (id, time, slot) => {
         navigate(`/trainers/${id}/${time}/${slot}`);
-      };
-    const { data, isLoading, error } = useQuery({
+    };
+    const { data: trainer, isLoading, error } = useQuery({
         queryKey: ['TrainerDetails'],
         queryFn: async () => {
-            const res =await axiosSecure.get(`/trainers/${id.id}`)
+            const res = await axiosSecure.get(`/trainers/${id.id}`)
             return res.data;
         }
 
     })
-    console.log(data)
+   
     return (
         <>
             <section className="py-6 container mx-auto bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 shadow-xl">
@@ -28,21 +28,21 @@ const TrainerDetailsPage = () => {
                     <p className="text-xl font-medium text-center">At FitFocus, we pride ourselves on having an elite team of dedicated trainers who are passionate about helping you achieve your fitness goals. </p>
                     <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
                         <Link to={"/beATrainer"}>
-                        <button className="px-8 py-3 text-lg font-semibold rounded bg-[#2F7955]  text-gray-50 dark:text-gray-900">Get started</button>
+                            <button className="px-8 py-3 text-lg font-semibold rounded bg-[#2F7955]  text-gray-50 dark:text-gray-900">Get started</button>
                         </Link>
-                        
+
                     </div>
                 </div>
             </section>
-            <div className="flex justify-center  mt-10">
-                <div className="border border-black">
-                    <h1 className="text-center border-b border-black">Trainer info</h1>
-                    <div className="flex flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-                        <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 dark:bg-gray-500 aspect-square" />
+            <div className="grid grid-cols-3 justify-center  container  mb-20 mx-auto mt-3">
+                <div className="border border-black col-span-1 ">
+                    <h1 className="text-center border-b border-black p-3 font-Rilway font-bold text-xl">Trainer info</h1>
+                    <div className="">
+                        <img src={trainer?.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 dark:bg-gray-500 aspect-square" />
                         <div className="space-y-4 text-center divide-y divide-gray-700 dark:divide-gray-300">
                             <div className="my-2 space-y-1">
-                                <h2 className="text-xl font-semibold sm:text-2xl">Leroy Jenkins</h2>
-                                <p className="px-5 text-xs sm:text-base text-gray-400 dark:text-gray-600">Full-stack developer</p>
+                                <h2 className="text-xl font-semibold sm:text-2xl">{trainer?.name}</h2>
+                                <p className="px-5  text-xs sm:text-base text-gray-400 dark:text-gray-600"> {trainer?.skills.join(', ')}</p>
                             </div>
                             <div className="flex justify-center pt-2 space-x-4 align-center">
                                 <a rel="noopener noreferrer" href="#" aria-label="GitHub" className="p-2 rounded-md text-gray-800 dark:text-gray-100 hover:text-violet-400 hover:dark:text-violet-600">
@@ -67,23 +67,33 @@ const TrainerDetailsPage = () => {
                                 </a>
                             </div>
                         </div>
+                        <div className="text-lg font-Rilway text-center text-gray-600 font-bold">
+                        <div>Age : {trainer?.age}</div>
+                        <span className=""> Available time: {trainer?.availableTime}</span> <br />
+                        <span className=""> Available Day: {trainer?.AvailableDaysAWeek.map(day => day.label).join(', ')}</span> <br />
+
+                        <span className=""> Other Info: <span className="text-xm font-normal">{trainer?.otherInfo}</span></span> <br />
+                        
+                        </div>
+                        
                     </div>
                 </div>
-                <div className="border border-black ">
-                    <h1 className="border-b border-black">Available slots</h1>
-                    <div className="max-w-md p-8 sm:flex sm:space-x-6 bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
-
-                        <div className="flex flex-col space-y-4">
+                <div className="border border-black   col-span-2">
+                    <h1 className="border-b border-black text-center p-3 font-Rilway font-bold text-xl">Available slots</h1>
+                    <div className=" grid grid-cols-2 p-5 ">
+                    {trainer?.SlotTime.map(slot => (
+                        <div key={slot} className="bg-gray-900 mb-3 text-center w-96 p-5 rounded-lg dark:bg-gray-50 text-gray-100 dark:text-gray-800">
                             <div>
-                                <h2 className="text-2xl font-semibold">10:00- 12:30</h2>
-                                <span className="text-sm text-center text-gray-400 dark:text-gray-600">sat-sun-wed</span>
-                                
+                                <h2 className="text-2xl font-semibold">{slot}</h2>
+                                <span className="text-sm text-center text-gray-400 dark:text-gray-600"> {trainer.AvailableDaysAWeek.map(day => day.label).join(', ')}</span>
                             </div>
-                            <Link onClick={()=>handleButtonClick(id.id,'10:00-12:30','sat-sun-wed')} to={`/trainers/${id.id}/10:00-12:30/sat-sun-wed`}>
-                            <button className="px-8 py-3 text-lg font-semibold rounded bg-[#2F7955]  text-gray-50 dark:text-gray-900">Booking</button>
+                            <Link onClick={() => handleButtonClick(id, slot, 'sat-sun-wed')} to={`/trainers/${id}/${slot}/sat-sun-wed`}>
+                                <button className="px-8 py-3 text-lg font-semibold rounded bg-[#2F7955] text-gray-50 dark:text-gray-900">Booking</button>
                             </Link>
-                            
                         </div>
+                    ))}
+                        
+
                     </div>
                 </div>
             </div>
