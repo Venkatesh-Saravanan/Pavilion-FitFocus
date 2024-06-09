@@ -4,17 +4,17 @@ import { axiosSecure } from "../../Hook/useAxiosSecure";
 
 
 const TrainerDetailsPage = () => {
-    const id = useParams()
-    console.log(id.id)
+    const {id} = useParams()
+    
     const navigate = useNavigate()
 
-    const handleButtonClick = (id, time, slot) => {
-        navigate(`/trainers/${id}/${time}/${slot}`);
+    const handleButtonClick = (id, time) => {
+        navigate(`/trainers/${id}/${time}`);
     };
     const { data: trainer, isLoading, error } = useQuery({
         queryKey: ['TrainerDetails'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/trainers/${id.id}`)
+            const res = await axiosSecure.get(`/trainers/${id}`)
             return res.data;
         }
 
@@ -87,7 +87,7 @@ const TrainerDetailsPage = () => {
                                 <h2 className="text-2xl font-semibold">{slot}</h2>
                                 <span className="text-sm text-center text-gray-400 dark:text-gray-600"> {trainer.AvailableDaysAWeek.map(day => day.label).join(', ')}</span>
                             </div>
-                            <Link onClick={() => handleButtonClick(id, slot, 'sat-sun-wed')} to={`/trainers/${id}/${slot}/sat-sun-wed`}>
+                            <Link onClick={() => handleButtonClick(id, slot)} to={`/trainers/${trainer?._id}/${slot}`}>
                                 <button className="px-8 py-3 text-lg font-semibold rounded bg-[#2F7955] text-gray-50 dark:text-gray-900">Booking</button>
                             </Link>
                         </div>

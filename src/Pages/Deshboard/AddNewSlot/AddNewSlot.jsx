@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import UseAuth from "../../../Hook/useAuth";
 import Select from 'react-select';
+import useClasses from "../../../Hook/useClasses";
 
 const AddNewSlot = () => {
     const { user, loading: authLoading } = UseAuth();
@@ -12,14 +13,8 @@ const AddNewSlot = () => {
     const [selectedClasses, setSelectedClasses] = useState([]);
     const [options, setOptions] = useState([]);
     const [selectedDays, setSelectedDays] = useState([]);
-    const { data: classes, isLoading: classesLoading } = useQuery({
-        queryKey: ['classes'],
-        queryFn: async () => {
-            const res = await axiosSecure.get('/NewClass');
-            return res.data;
-        }
-    });
-
+   const {classes, classesLoading} = useClasses()
+console.log(classes)
     useEffect(() => {
         if (classes) {
             const newOptions = classes.map(cls => ({

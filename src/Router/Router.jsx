@@ -20,6 +20,7 @@ import Trainers from "../Pages/Deshboard/Trainers/Trainers";
 import AddNewSlot from "../Pages/Deshboard/AddNewSlot/AddNewSlot";
 import AddnewClass from "../Pages/Deshboard/AddnewClass/AddnewClass";
 import AllClasses from "../Pages/AllClasses/AllClasses";
+import PaymentPage from "../Pages/PaymentPage/PaymentPage";
 
   const router = createBrowserRouter([
     {
@@ -51,12 +52,17 @@ import AllClasses from "../Pages/AllClasses/AllClasses";
           element: <TrainerDetailsPage></TrainerDetailsPage>
         },
         {
-          path:"/trainers/:id/:time/:slot",
+          path:"/trainers/:id/:time",
           element:<TrainerBookedPage></TrainerBookedPage>
         },
         {
           path:"/allclass",
           element:<AllClasses></AllClasses>
+       
+        },
+        {
+          path:"/payment",
+          element:<PaymentPage></PaymentPage>
         }
       ]
     },
