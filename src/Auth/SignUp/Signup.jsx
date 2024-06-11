@@ -8,6 +8,7 @@ import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import UseAuth from "../../Hook/useAuth";
 import { axiosSecure } from "../../Hook/useAxiosSecure";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 
 
@@ -81,13 +82,13 @@ console.log(data.email)
   return (
     <div className="font-display">
       <div className="pt-5"></div>
-      <div className="w-96 mx-auto shadow-2xl bg-[#fff] rounded-lg pt-5">
+      <div className="w-[80%] lg:w-[40%] mx-auto shadow-2xl border border-[#93c4d3] bg-[#fff] rounded-lg pt-5">
         <Helmet>
-          <title>ShareTrip | Signup</title>
+          <title>FITFOCUS | Signup</title>
         </Helmet>
         <h1 className=" text-center text-2xl font-bold italic">
-        Welcome To  <span className=" font-bold text-[#006aff]">Share</span> <span className="font-bold">Trip!</span>
-        <h1 className="text-xs text-[#424242] font-normal mt-1">Welcome to <span className=" font-bold text-[#006aff]">Share</span> <span className="font-bold">Trip!</span>  Sign In to continue</h1>
+        Welcome To  <span className=" font-bold text-[#0C7EA0]">FITFOCUS</span> <span className="font-bold">!</span>
+        <h1 className="text-xs text-[#424242] font-normal mt-1">Welcome to <span className=" font-bold text-[#006aff]">FITFOCUS</span> <span className="font-bold">!</span>  Sign In to continue</h1>
       </h1>
         
         {/* form start */}
@@ -149,7 +150,7 @@ console.log(data.email)
             <div className="flex item-center relative" ><input
               type={pass? 'text': "password"}
               placeholder="Password"
-              className="input input-bordered"
+              className="input w-full P-1 input-bordered"
               {...register("password", {
                 required: true,
               })}
@@ -164,9 +165,9 @@ console.log(data.email)
           <div className="form-control mt-6">
             <button
               type="submit"
-              className="btn w-[50%] mx-auto bg-[#006aff] text-[#fff]"
+              className="btn w-[50%] mx-auto bg-[#0C7EA0] text-[#fff]"
             >
-              Sig Up
+              Sign Up
             </button>
           </div>
           <div className="flex gap-5 items-center ">
@@ -177,6 +178,7 @@ console.log(data.email)
               </button>
             </Link>
           </div>
+          <SocialLogin></SocialLogin>
         </form>
       </div>
     </div>

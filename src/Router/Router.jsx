@@ -21,6 +21,9 @@ import AddNewSlot from "../Pages/Deshboard/AddNewSlot/AddNewSlot";
 import AddnewClass from "../Pages/Deshboard/AddnewClass/AddnewClass";
 import AllClasses from "../Pages/AllClasses/AllClasses";
 import PaymentPage from "../Pages/PaymentPage/PaymentPage";
+import Balance from "../Pages/Deshboard/Balance/Balance";
+import PieChart from "../Pages/AppliedTrainer/Test";
+import ManageSlot from "../Pages/Deshboard/ManageSlot/ManageSlot";
 
   const router = createBrowserRouter([
     {
@@ -71,12 +74,16 @@ import PaymentPage from "../Pages/PaymentPage/PaymentPage";
       element:<Dashboard></Dashboard>,
       children:[
         {
+          path:"/deshboard",
+          element:<Balance></Balance>
+        },
+        {
           path:"/deshboard/appliedTrainer",
           element:<AppliedTrainer></AppliedTrainer>
         },
         {
           path:"/deshboard/test",
-          element:<Test></Test>
+          element:<PieChart></PieChart>
         },
         {
           path:"/deshboard/newslatter",
@@ -97,6 +104,10 @@ import PaymentPage from "../Pages/PaymentPage/PaymentPage";
         {
           path:"/deshboard/addnewclass",
           element:<AddnewClass></AddnewClass>
+        },
+        {
+          path:"/deshboard/manageslot",
+          element: <ManageSlot></ManageSlot>
         },
       ]
     }

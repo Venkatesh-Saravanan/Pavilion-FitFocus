@@ -25,6 +25,7 @@ const TrainerBookedPage = () => {
     useEffect(() => {
         if (trainer) {
             setValue('trainerName', trainer.name || '');
+            setValue('trainerEmail', trainer.user_email || '');
             setValue('selectedSlot', time);
         }
     }, [trainer, setValue, time]);
@@ -54,6 +55,10 @@ const TrainerBookedPage = () => {
                     <div className="grid grid-cols-2">
                         <label className="block  text-gray-700 font-bold text-base" htmlFor="trainerName">Trainer Name :</label>
                         <input disabled  id="trainerName" className="block  w-full bg-slate-200" {...register('trainerName')} />
+                    </div>
+                    <div className="grid grid-cols-2">
+                        <label className="block  text-gray-700 font-bold text-base" htmlFor="trainerName">Trainer Email :</label>
+                        <input disabled  id="trainerName" className="block  w-full bg-slate-200" {...register('trainerEmail')} />
                     </div>
 
                     <div className="grid grid-cols-2">

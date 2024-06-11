@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { axiosSecure } from '../../../Hook/useAxiosSecure';
 import Swal from 'sweetalert2';
 
 
 function AddnewClass() {
-  const { register, handleSubmit,reset, formState: { errors } } = useForm();
-
+  const { register, setValue, handleSubmit,reset, formState: { errors } } = useForm();
+  useEffect(() => {
+    
+        setValue('totalBook', 0 );
+      
+    
+}, [ setValue]);
   const onSubmit = (data) => {
     console.log(data);
     axiosSecure.post('/NewClass',data)
@@ -68,7 +73,17 @@ function AddnewClass() {
             <p className="text-red-500 ml-1">Image URL is required.</p>
           )}
         </div>
-        
+
+
+        <input
+        disabled
+            type="number"
+            placeholder="Image URL"
+            className="input hidden input-bordered"
+            {...register('totalBook', { required: true })}
+          />
+
+
         <div className="form-control w-full">
           <label className="label">
             <span className="label-text">Details</span>

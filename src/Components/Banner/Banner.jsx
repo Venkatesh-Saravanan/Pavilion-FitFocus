@@ -7,12 +7,13 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 import { Helmet } from 'react-helmet';
 import bg from "../../../public/bg1.gif";
 import bg1 from "../../../public/bg2.gif";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div className="container mx-auto ">
       <Helmet>
-        <title>PlateSwap | Home</title>
+        <title>FITFOCUS | Home</title>
       </Helmet>
       <div className='relative font-Poppins'>
         <Swiper
@@ -29,22 +30,33 @@ const Home = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide className='bg-gradient-to-r rounded-xl from-slate-900 to-black  '>
+          <SwiperSlide className='bg-gradient-to-r  rounded-xl from-slate-900 to-black  '>
             <div
               className="bg-cover rounded-xl mr-0 bg-center hero w-full h-[580px] bg-gradient-to-r from-slate-900 to-black"
               style={{
                 backgroundImage: `url(${bg1})`,
               }}
             >
-              <div className="hero-content text-center text-neutral-content animate__animated animate__fadeInUp animate__slower">
-                <div className="lg:max-w-lg md:max-w-md w-[100%] lg:w-[100%]">
-                  <h1 className="mb-5 text-3xl lg:text-5xl font-bold text-[#fff] font-Prata">
-                    Discover Your Food
+              <div className='w-full h-full bg-opacity-5 flex justify-center items-center bg-slate-100'>
+              <div className="hero-content  text-center text-neutral-content animate__animated animate__fadeInUp animate__slower">
+                <div className="lg:max-w-lg md:max-w-md w-[100%]  lg:w-[100%]">
+                  <h1 className="mb- text-xl lg:text-3xl font-bold text-[#000] p-3 bg-opacity-5  font-Prata">
+                  FITFOCUS: Shape Your Future
                   </h1>
                   <p className="mb-5 text-[#fff] font-semibold">
-                    Welcome to <a className="ml-2 text-2xl font-bold italic text-[#48cf8e]">PlateSwap</a>
+                    Welcome to <a className="ml-2 text-2xl font-bold italic text-[#1E1743]">FITFOCUS .</a>
+                    Your Ultimate Destination for Health, Wellness, and Fitness. Empowering You to Train, Transform, and Achieve Peak Performance Every Day.
                   </p>
+                  <Link to="/trainers">
+                <button
+                  className="align-middle mr-3 select-none font-Rilway text-lg font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3 px-6 rounded-lg bg-[#1E1743] border m-5 border-[#3aaf01] text-[#fff] hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85]"
+                  type="button"
+                >
+                  See Our Trainer→
+                </button>
+              </Link>
                 </div>
+              </div>
               </div>
             </div>
           </SwiperSlide>
@@ -56,13 +68,22 @@ const Home = () => {
               }}
             >
               <div className="hero-content text-center text-neutral-content animate__animated animate__fadeInUp animate__slower">
-                <div className="lg:max-w-lg md:max-w-md w-[100%] lg:w-[100%]">
-                  <h1 className="mb-5 text-3xl lg:text-5xl font-bold text-[#fff] font-Prata">
-                    Discover Your Food
+              <div className="lg:max-w-lg md:max-w-md w-[100%]  lg:w-[100%]">
+                  <h1 className="mb- text-xl lg:text-3xl font-bold text-[#fff] p-3 bg-opacity-5  font-Prata">
+                  FITFOCUS: Shape Your Future
                   </h1>
                   <p className="mb-5 text-[#fff] font-semibold">
-                    Welcome to <a className="ml-2 text-2xl font-bold italic text-[#48cf8e]">PlateSwap</a>
+                    Welcome to <a className="ml-2 text-2xl font-bold italic text-[#1E1743]">FITFOCUS .</a>
+                    Your Ultimate Destination for Health, Wellness, and Fitness. Empowering You to Train, Transform, and Achieve Peak Performance Every Day.
                   </p>
+                  <Link to="/trainers">
+                <button
+                  className="align-middle mr-3 select-none font-Rilway text-lg font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3 px-6 rounded-lg bg-[#1E1743] border m-5 border-[#3aaf01] text-[#fff] hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85]"
+                  type="button"
+                >
+                  See Our Trainer→
+                </button>
+              </Link>
                 </div>
               </div>
             </div>

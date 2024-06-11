@@ -42,13 +42,24 @@ const BeATrainer = () => {
             "Content-Type": 'application/json'
         }
     }).then(res => {
-        if (res.status === 200) { // Here, changed response to res
+      
+        if (res.status === 200) { 
+          
+          if (res.data.message) {
             Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: 'Data added successfully',
-                confirmButtonText: 'OK'
-            });
+              icon: 'info',
+              title: 'Aleart!',
+              text: 'you are already Trainer',
+              confirmButtonText: 'OK'
+          });
+          } else {
+            Swal.fire({
+              icon: 'success',
+              title: 'Success!',
+              text: 'Data added successfully',
+              confirmButtonText: 'OK'
+          });
+          }
         }
     }).catch(error => {
         console.error('Error:', error);

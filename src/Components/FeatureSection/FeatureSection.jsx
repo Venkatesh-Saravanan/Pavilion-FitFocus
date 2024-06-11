@@ -21,7 +21,7 @@ const FeatureSection = () => {
     <h1 className="text-4xl font-Prata font-bold mt-24" >Services</h1>
     <p className="mt-2 mb-10 text-slate-500 ">Benefit from custom weight loss plans integrating exercise, diet, and ongoing support, guiding you <br /> towards safe and sustainable weight management.</p>
 </div>
-        <div className="grid gap-5 grid-cols-3 container mx-auto">
+        <div className="lg:grid gap-5 grid-cols-3 container mx-auto">
 
             {
                 data?.map(singleData => <>

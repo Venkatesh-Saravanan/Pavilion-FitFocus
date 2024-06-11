@@ -47,13 +47,13 @@ const Login = () => {
   return (
     <div className='font-Murecho'>
       <div className="pt-5"></div>
-    <div className="w-[80%] lg:w-[35%] mx-auto shadow-2xl bg-[#fff] rounded-lg pt-5">
+    <div className="w-[80%] lg:w-[35%] mx-auto shadow-2xl bg-[#fff] rounded-lg pt-5 border border-[#93c4d3]">
       <Helmet>
-        <title>ShareTrip| Login </title>
+        <title>FITFOCUS | Login </title>
       </Helmet>
       <h1 className=" text-center text-2xl font-bold italic">
         Welcome Back 
-        <h1 className="text-xs text-[#424242] font-normal mt-1">Welcome to <span className=" font-bold text-[#006aff]">Share</span> <span className="font-bold">Trip!</span>  Sign In to continue</h1>
+        <h1 className="text-xs text-[#424242] font-normal mt-1">Welcome to <span className=" font-bold text-[#006aff]">FITFOCUS</span> <span className="font-bold"></span>  Sign In to continue</h1>
       </h1>
       <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
@@ -90,14 +90,14 @@ const Login = () => {
         </div>
 
         <div className="form-control mt-6">
-          <button type="submit" className="btn text-[#fff] bg-[#006aff]">
+          <button type="submit" className="btn text-[#fff] bg-[#0C7EA0]">
             Sign In
           </button>
         </div>
         <div className="flex  items-center ">
           <p>New User?</p>
           <Link to="/signup">
-            <button className="btn text-[#006aff] bg-slate-100">SignUp</button>
+            <button className="btn text-[#0C7EA0] bg-slate-100">SignUp</button>
           </Link>
         </div>
         <SocialLogin></SocialLogin>
