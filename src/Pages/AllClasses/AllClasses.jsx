@@ -12,11 +12,11 @@ const AllClasses = () => {
     })
     
     return (
-        <div className="bg-slate-300">
-            <div className="font-Prata font-bold text-2xl p-10 text-center">
+        <div className="">
+            <div className="font-Prata   font-bold text-2xl p-10 text-center">
                 <h1>All Classes</h1>
             </div>
-            <div className="grid grid-cols-2 container gap-10 mx-auto ">
+            <div className="lg:grid grid-cols-2  mb-20  container gap-10 mx-auto ">
                 {
                     data?.map(item => <Class key={item._id} Class={item} />)
                 }

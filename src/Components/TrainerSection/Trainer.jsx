@@ -68,6 +68,7 @@ const Trainer = ({ trainer }) => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };
