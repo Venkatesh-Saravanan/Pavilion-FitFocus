@@ -14,7 +14,7 @@ const Newslatter = () => {
     if (error) return <div>Error: {error.message}</div>;
 
     return (
-        <div className="text-center px-10">
+        <div className="text-center px-10 ">
             <div className="overflow-x-auto ">
                 <table className="table">
                     <thead className="text-[#155E75] text-xl font-semibold">

@@ -6,7 +6,7 @@ import SingleSlot from "./SingleSlot";
 const ManageSlot = () => {
     const { user } = UseAuth();
 
-    const { data: trainer, isLoading, error } = useQuery({
+    const { data: trainer, isLoading, error, refetch } = useQuery({
         queryKey: ['TrainerDetails'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/alltrainer/${user.email}`);
@@ -26,7 +26,7 @@ const ManageSlot = () => {
                 <div className="grid grid-cols-2 p-5">
                     {trainer?.SlotTime ? (
                         trainer.SlotTime.map(slot => (
-                            <SingleSlot key={slot} slot={slot} trainerid={trainer._id} />
+                            <SingleSlot key={slot} slot={slot} trainerid={trainer._id} refetch={refetch} />
                         ))
                     ) : (
                         <div>No slots available</div>

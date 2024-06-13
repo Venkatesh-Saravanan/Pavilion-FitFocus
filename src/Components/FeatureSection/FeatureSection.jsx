@@ -14,7 +14,7 @@ const FeatureSection = () => {
     if (isloading) {
         return 'loading'
     }
-    console.log(data)
+    
     return (
 <>
 <div className="text-center">

@@ -5,9 +5,11 @@ import { IoAddCircle } from "react-icons/io5";
 import { SiTrainerroad } from "react-icons/si";
 
 import { Link, NavLink } from "react-router-dom";
+import UseAuth from "../../Hook/useAuth";
 
 
 const Sidebar = () => {
+    const {user}=UseAuth()
     return (
         <div>
               <div className="bg-fixed">
@@ -16,7 +18,7 @@ const Sidebar = () => {
             <div className=" h-[550px] col-span-1 shadow-2xl border-r-2 border-black bg-[#1E1743]">
                 <div className="h-full text-[#fff]  p-3 space-y-2 w-60 dark:bg-gray-50 dark:text-gray-800">
                     <div className="flex items-center p-2 space-x-4">
-                        <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />
+                        <img src={user.photoURL} alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />
                         <div>
                             <h2 className="text-lg font-semibold">Leroy Jenkins</h2>
                             <span className="flex items-center space-x-1">
@@ -82,6 +84,14 @@ const Sidebar = () => {
                                 <a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                 <IoAddCircle />
                                     <span>Manage Slot</span>
+                                </a>
+                                </NavLink>
+                            </li>
+                            <li>
+                            <NavLink to="/deshboard/AddForumPost">
+                                <a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
+                                <IoAddCircle />
+                                    <span>Add Forum Post</span>
                                 </a>
                                 </NavLink>
                             </li>

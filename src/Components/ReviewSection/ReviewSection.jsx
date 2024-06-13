@@ -36,11 +36,11 @@ const ReviewSection = () => {
 
 
                 <SwiperSlide>
-                    <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 bg-gray-50 text-gray-800">
+                    <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 bg-gray-100 text-gray-800">
                         <div className="flex justify-between p-4">
                             <div className="flex space-x-4">
                                 <div>
-                                    <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                                    <img src="https://i.ibb.co/JkYJHdD/pexels-ron-lach-8745174.jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
                                 </div>
                                 <div>
                                     <h4 className="font-bold">Leroy Jenkins</h4>
@@ -61,11 +61,11 @@ const ReviewSection = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
+                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 bg-gray-100 dark:text-gray-800">
 	<div className="flex justify-between p-4">
 		<div className="flex space-x-4">
 			<div>
-				<img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+				<img src="https://i.ibb.co/TR8Cdww/pexels-koolshooters-9944859.jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
 			</div>
 			<div>
 				<h4 className="font-bold">Leroy Jenkins</h4>
@@ -86,11 +86,11 @@ const ReviewSection = () => {
 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
+                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 bg-gray-100 dark:text-gray-800">
 	<div className="flex justify-between p-4">
 		<div className="flex space-x-4">
 			<div>
-				<img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+				<img src="https://i.ibb.co/jhnPdcL/pexels-thisisengineering-3912953.jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
 			</div>
 			<div>
 				<h4 className="font-bold">Leroy Jenkins</h4>
@@ -111,11 +111,11 @@ const ReviewSection = () => {
 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
+                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 bg-gray-100 dark:text-gray-800">
 	<div className="flex justify-between p-4">
 		<div className="flex space-x-4">
 			<div>
-				<img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+				<img src="https://i.ibb.co/JkYJHdD/pexels-ron-lach-8745174.jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
 			</div>
 			<div>
 				<h4 className="font-bold">Leroy Jenkins</h4>
@@ -136,11 +136,11 @@ const ReviewSection = () => {
 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
+                <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 bg-gray-100 dark:text-gray-800">
 	<div className="flex justify-between p-4">
 		<div className="flex space-x-4">
 			<div>
-				<img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+				<img src="https://i.ibb.co/jhnPdcL/pexels-thisisengineering-3912953.jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
 			</div>
 			<div>
 				<h4 className="font-bold">Leroy Jenkins</h4>

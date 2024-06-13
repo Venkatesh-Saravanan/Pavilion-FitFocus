@@ -1,14 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import { axiosSecure } from "../../../Hook/useAxiosSecure";
 import { FaTrash } from "react-icons/fa"; // Fixed icon import
+import UseAuth from "../../../Hook/useAuth";
+import Swal from "sweetalert2";
 
-const SingleSlot = ({ slot,trainerid }) => {
+const SingleSlot = ({ slot, trainerid, refetch }) => {
+    const { user } = UseAuth()
     console.log(trainerid)
     const { data, isLoading, error } = useQuery({
         queryKey: ['singleslot', slot],
         queryFn: async () => {
             try {
-                const res = await axiosSecure.get(`http://localhost:5000/ckeckbooking/guqo@mailinator.com/${slot}`);
+                const res = await axiosSecure.get(`http://localhost:5000/ckeckbooking/${user.email}/${slot}`);
                 return res.data;
             } catch (error) {
                 throw new Error("Failed to fetch slot data");
@@ -23,14 +26,37 @@ const SingleSlot = ({ slot,trainerid }) => {
 
     // Function to handle slot deletion
     const handleDelete = async (id, slot) => {
-        try {
-            console.log(id,slot)
-            await axiosSecure.delete(`/trainers/${trainerid}/${slot}`);
-            
-        } catch (error) {
-            console.error("Error deleting slot:", error);
-            // Handle error if needed
-        }
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/trainers/${trainerid}/${slot}`)
+                    .then(res => {
+                        if (res) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            refetch()
+                        }
+
+                    })
+
+            }
+        });
+        console.log(id, slot)
+
+
+
+
     };
 
 
@@ -39,9 +65,9 @@ const SingleSlot = ({ slot,trainerid }) => {
     return (
         <div>
             {isSlotBooked ? (
-                <div className="bg-slate-950 text-white text-center p-5 mb-2 rounded-lg relative">
+                <div className="bg-slate-950 mr-3 h-36 text-white text-center p-5 mb-2 rounded-lg relative">
                     <h2 className=" p-1 px-1   text-white bg-red-500 absolute -top-0 -left-0">Booked</h2>
-                    <div className="grid grid-cols-3 items-center">
+                    <div className="grid grid-cols-3 items-center justify-between">
                         <div className="col-span-2">
                             <h2 className="text-2xl font-semibold">{slot}</h2>
                             <h1>Booked By:</h1>
@@ -52,18 +78,23 @@ const SingleSlot = ({ slot,trainerid }) => {
                         </div>
                         <div>
                             {/* Pass the handler function to onClick */}
-                            <button onClick={() => handleDelete(data[0]._id, slot)} className="btn text-red-500"><FaTrash size={26} /></button>
+                            <button onClick={() => handleDelete(trainerid, slot)} className="btn text-red-500"><FaTrash size={16} /></button>
                         </div>
                     </div>
                 </div>
             ) : (
-                <div className="relative ml-3 bg-slate-950 rounded-lg ">
+                <div className="relative mr-3 h-36 bg-slate-950 rounded-lg ">
                     <h2 className="p-1 px-1   text-white bg-red-500 absolute -top-0 -left-0">Available</h2>
-                    <div className="grid grid-cols-3 items-center justify-between">
-                        <div className="col-span-2 text-white text-2xl font-semibold text-center p-5 mb-2 rounded-lg">{slot}</div>
-                        <div>
+                    <div className="grid grid-cols-4 items-center justify-between">
+                        <div className="col-span-3 text-center text-white">
+                            <div className="  text-2xl font-semibold text-center p-5 mb-2 rounded-lg">{slot}</div>
+                            <h1> an open canvas of possibilities!</h1>
+                        </div>
+
+
+                        <div className="col-span-1">
                             {/* Pass the handler function to onClick */}
-                            <button onClick={() => handleDelete(data[0]._id, slot)} className="btn col-span-1 text-red-500"><FaTrash size={26} /></button>
+                            <button onClick={() => handleDelete(trainerid, slot)} className="btn col-span-1 text-red-500"><FaTrash size={16} /></button>
                         </div>
                     </div>
                 </div>

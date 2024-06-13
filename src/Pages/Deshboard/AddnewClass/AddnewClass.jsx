@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 
 function AddnewClass() {
+  
   const { register, setValue, handleSubmit,reset, formState: { errors } } = useForm();
   useEffect(() => {
     
@@ -16,7 +17,7 @@ function AddnewClass() {
     console.log(data);
     axiosSecure.post('/NewClass',data)
     .then(response=>{
-      reset()
+      
         const responseData = response.data;
         if (responseData.error) {
            
@@ -37,9 +38,11 @@ function AddnewClass() {
             });
 
         }
+       
     })
+   
   };
-
+  
   return (
     <div className="lg:w-[50%] shadow-lg mx-auto mt-10 p-5 bg-slate-100 ">
       <h1 className='text-2xl font-Prata font-bold text-center p-5'>Add New Class</h1>

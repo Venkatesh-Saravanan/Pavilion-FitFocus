@@ -18,13 +18,13 @@ const SocialLogin = () => {
         const data={
             name : users.user.displayName,
             email: users.user.email,
-            photoURL: users.user.photoURL, // Corrected here
+            photoURL: users.user.photoURL, 
           role: "user"
         }
         console.log(data)
         axiosSecure.post("/users", data)
-        console.log(users)
-        navigate(location?.state ? location.state : "/");
+        console.log(location?.state)
+        navigate(location?.state?.from || "/");
         setLoading(false)
     })
     .catch((error)=>{

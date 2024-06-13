@@ -29,7 +29,7 @@ const NewsletterSection = () => {
       
     };
     return (
-        <div className="bg-gradient-to-r from-[#6cdbc0] to-white">
+        <div className="mt-20 container mx-auto rounded-xl bg-gradient-to-r from-[#d4d3da] to-white">
             <div className="lg:grid grid-cols-2 ">
                 <div className="text-center  p-20">
                     <h1 className="text-2xl font-bold font-Prata">Subscribe Our Newsletter</h1>
@@ -42,7 +42,7 @@ const NewsletterSection = () => {
               <input
                 type="text"
                 placeholder="Name"
-                className="input input-bordered bg-slate-200 mb-5"
+                className="input input-bordered  mb-5"
                 {...register("name", { required: true })}
               />
               {errors.name && (
@@ -55,7 +55,7 @@ const NewsletterSection = () => {
               <input 
                 type="email"
                 placeholder={ "Email"}
-                className="input input-bordered bg-slate-200"
+                className="input input-bordered "
                 {...register("user_email", { required: true })}
               />
               {errors.email && (
@@ -63,7 +63,7 @@ const NewsletterSection = () => {
               )}
             </div>
             {/* Submit button */}
-            <button className="btn text-white bg-[#10A37F] mt-5" type="submit">Subscribe</button>
+            <button className="btn text-white bg-[#1E1743] mt-5" type="submit">Subscribe</button>
         </form>
                 </div>
                 

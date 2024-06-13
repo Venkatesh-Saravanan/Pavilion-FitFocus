@@ -49,14 +49,14 @@ const BeATrainer = () => {
             Swal.fire({
               icon: 'info',
               title: 'Aleart!',
-              text: 'you are already Trainer',
+              text: 'you are already Trainer or Requested for trainer ',
               confirmButtonText: 'OK'
           });
           } else {
             Swal.fire({
               icon: 'success',
               title: 'Success!',
-              text: 'Data added successfully',
+              text: 'Request successfully, wait for admin feedback',
               confirmButtonText: 'OK'
           });
           }
@@ -87,12 +87,13 @@ const BeATrainer = () => {
   };
 
   const skillOptions = [
-    { value: 'Yoga', label: 'Yoga' },
-    { value: 'Fitness', label: 'Fitness' },
-    { value: 'Gym', label: 'Gym' },
-    { value: 'Zumba', label: 'Zumba' },
+   
+    { value: 'Nutrition', label: 'Nutrition' },
+    { value: 'Exercise Technique', label: 'Exercise Technique' },
+    { value: 'Fitness Assessment', label: 'Fitness Assessment' },
     { value: 'Pilates', label: 'Pilates' },
     { value: 'Cardio', label: 'Cardio' },
+    { value: 'Anatomy and Physiology', label: 'Anatomy ' },
   ];
   return (
     <div className="font-Rilway">

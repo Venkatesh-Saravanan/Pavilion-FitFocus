@@ -30,7 +30,7 @@ const Login = () => {
 //SIGN IN WITH EMAIL AND PASSWORD FUNCIONALITY
     signinUser(data.email, data.password)
       .then(() => {
-        navigate(location?.state ? location.state : "/");
+        navigate(location?.state?.from || "/");
         setLoading(false);
       })
       .catch((error) => {
@@ -47,7 +47,7 @@ const Login = () => {
   return (
     <div className='font-Murecho'>
       <div className="pt-5"></div>
-    <div className="w-[80%] lg:w-[35%] mx-auto shadow-2xl bg-[#fff] rounded-lg pt-5 border border-[#93c4d3]">
+    <div className="w-[80%] lg:w-[40%] mx-auto shadow-2xl bg-[#fff] rounded-lg pt-5 border border-[#93c4d3]">
       <Helmet>
         <title>FITFOCUS | Login </title>
       </Helmet>

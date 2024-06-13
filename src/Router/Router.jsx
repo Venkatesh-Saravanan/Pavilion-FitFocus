@@ -24,6 +24,8 @@ import PaymentPage from "../Pages/PaymentPage/PaymentPage";
 import Balance from "../Pages/Deshboard/Balance/Balance";
 import PieChart from "../Pages/AppliedTrainer/Test";
 import ManageSlot from "../Pages/Deshboard/ManageSlot/ManageSlot";
+import AddForumPost from "../Pages/Deshboard/AddForumPost/AddForumPost";
+import Community from "../Components/Community/Community";
 
   const router = createBrowserRouter([
     {
@@ -66,6 +68,10 @@ import ManageSlot from "../Pages/Deshboard/ManageSlot/ManageSlot";
         {
           path:"/payment",
           element:<PaymentPage></PaymentPage>
+        },
+        {
+          path:"/community",
+          element:<Community></Community>
         }
       ]
     },
@@ -108,6 +114,10 @@ import ManageSlot from "../Pages/Deshboard/ManageSlot/ManageSlot";
         {
           path:"/deshboard/manageslot",
           element: <ManageSlot></ManageSlot>
+        },
+        {
+          path:"/deshboard/addForumPost",
+          element: <AddForumPost></AddForumPost>
         },
       ]
     }

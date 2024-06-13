@@ -8,7 +8,7 @@ const Root = () => {
     const { loading } = UseAuth();
     if (loading) {
 // set loading
-        return <div className="bg-[#0C7EA0] h-screen flex justify-center items-center">
+        return <div className="bg-[#1E1743] h-screen flex justify-center items-center">
             <div>
                 <span className=" text-white m-auto loading loading-spinner w-20"></span>
                 <div className="flex items-center justify-center  -ml-[30%]">

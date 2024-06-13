@@ -21,6 +21,10 @@ const Header = () => {
     }
   }, [data]);
 
+
+  if(isLoading){
+    
+  }
   const handleLogout = () => {
     logOut();
     setUserData(null); // Reset user data on logout
@@ -107,7 +111,7 @@ const Header = () => {
               </div>
             </NavLink>
             <div className="border-r-2"></div>
-            <NavLink to="/AvailableFoods" className="font-normal text-base" activeClassName="active">
+            <NavLink to="/community" className="font-normal text-base" activeClassName="active">
               <div className="flex items-center gap-1 justify-center">
                 <span>Community</span>
               </div>
