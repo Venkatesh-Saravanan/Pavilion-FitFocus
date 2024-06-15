@@ -16,7 +16,7 @@ const AddNewSlot = () => {
     const [options, setOptions] = useState([]);
     const [selectedDays, setSelectedDays] = useState([]);
    const {classes, classesLoading} = useClasses()
-console.log(classes)
+
     useEffect(() => {
         if (classes) {
             const newOptions = classes.map(cls => ({
@@ -66,7 +66,7 @@ console.log(classes)
     }, [data, setValue]);
 
     const handleUpdate = (id) => {
-        console.log(id)
+       
     }
 
 
@@ -76,7 +76,7 @@ console.log(classes)
     const onSubmit = async (formData) => {
         
         const formDataWithSlotTimes = { ...data, SlotTime: slotTimes, AvailableDaysAWeek: selectedDays, Classes: selectedClasses  };
-        console.log(formDataWithSlotTimes)
+       
         try {
             
             const response = await axiosSecurePrivte.put(`/trainers/${data?._id}`, formDataWithSlotTimes);

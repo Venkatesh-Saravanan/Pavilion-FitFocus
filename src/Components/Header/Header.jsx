@@ -14,7 +14,9 @@ const Header = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
   const { data, isLoading, error, refetch } = useUserByEmail();
-
+  if (isLoading) {
+    return <div className="bg-red-500 text-3xl text-center">Loading.....</div>
+}
   useEffect(() => {
     if (data) {
       setUserData(data);

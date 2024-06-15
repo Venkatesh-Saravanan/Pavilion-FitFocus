@@ -62,7 +62,6 @@ const NewsletterSection = () => {
                 <p className="text-red-500 ml-1">Email is required</p>
               )}
             </div>
-            {/* Submit button */}
             <button className="btn text-white bg-[#1E1743] mt-5" type="submit">Subscribe</button>
         </form>
                 </div>

@@ -47,7 +47,6 @@ const Sidebar = () => {
 
                     <div className="divide-y dark:divide-gray-300">
                         <ul className="pt-2 pb-4 space-y-1 text-sm">
-                {/* admin deshboard */}
                             {
                                 userData?.role === "admin" && (
                                     <>

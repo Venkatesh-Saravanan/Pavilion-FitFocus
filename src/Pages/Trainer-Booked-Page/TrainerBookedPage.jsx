@@ -34,13 +34,13 @@ const TrainerBookedPage = () => {
 
     const onSubmit = (data) => {
         const formData = { ...data, selectedClass };
-        console.log(formData)
+    
         setFormData(formData); 
         navigate('/payment', { state: { formData } });
     };
 
     const handleNavigate= () =>{
-        console.log('navigatedata is, ', formData)
+       
     }
     if (isLoading || classesLoading) {
         return <div>Loading...</div>;

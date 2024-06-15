@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
 import UseAuth from "../../Hook/useAuth";
-import { axiosSecure } from "../../Hook/useAxiosSecure";
 import { useState } from "react";
 import Select from 'react-select';
 import Swal from "sweetalert2";
@@ -21,7 +20,7 @@ const BeATrainer = () => {
     { value: 'Saturday', label: 'Saturday' }
   ];
   const [selectedDays, setSelectedDays] = useState([]);
-
+  const [skills, setSkills] = useState([]);
   const {
     register,
     setValue,
@@ -29,7 +28,7 @@ const BeATrainer = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [skills, setSkills] = useState([]);
+ 
 
   if (user) {
     setValue('user_email', user.email || '')
@@ -38,11 +37,8 @@ const BeATrainer = () => {
   
   const onSubmit = (data) => {
     const formDataWithSkills = { ...data, AvailableDaysAWeek: selectedDays, skills: skills };
-    
-    axiosSecurePrivte.post('/trainers', formDataWithSkills, {
-       
+    axiosSecurePrivte.post('/trainers', formDataWithSkills, {   
     }).then(res => {
-      
         if (res.status === 200) { 
           reset()
           if (res.data.message) {
@@ -50,8 +46,7 @@ const BeATrainer = () => {
               icon: 'info',
               title: 'Aleart!',
               text: 'you are already Trainer or Requested for trainer ',
-              confirmButtonText: 'OK',
-             
+              confirmButtonText: 'OK',     
           });
           } else {
             Swal.fire({
@@ -88,7 +83,6 @@ const BeATrainer = () => {
   };
 
   const skillOptions = [
-   
     { value: 'Nutrition', label: 'Nutrition' },
     { value: 'Exercise Technique', label: 'Exercise Technique' },
     { value: 'Fitness Assessment', label: 'Fitness Assessment' },

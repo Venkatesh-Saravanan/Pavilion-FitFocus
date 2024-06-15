@@ -9,7 +9,7 @@ const AvailableSlots = ({ slot, id, email }) => {
         queryKey: ['singleslot', slot],
         queryFn: async () => {
             try {
-                const res = await axiosSecurePrivte.get(`http://localhost:5000/ckeckbooking/${email}/${slot}`);
+                const res = await axiosSecurePrivte.get(`/ckeckbooking/${email}/${slot}`);
                 return res.data;
             } catch (error) {
                 throw new Error("Failed to fetch slot data");

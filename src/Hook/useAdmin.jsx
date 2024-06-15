@@ -11,7 +11,7 @@ const useAdmin = () => {
         enabled: !loading && !!user?.email, // Ensure user.email is defined before enabling query
         queryFn: async () => {
             try {
-                console.log('Checking if user is admin', user);
+               
                 if (!user || !user.email) {
                     throw new Error('User or user email is undefined');
                 }

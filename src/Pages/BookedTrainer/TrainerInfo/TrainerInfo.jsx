@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 const TrainerInfo = ({ bookedTrainer }) => {
     const { user } = UseAuth();
-    console.log(user)
+    
     const axiosSecurePrivte = useAxiosSecurePrivate()
     const { data: trainer, isLoading, error,reset } = useQuery({
         queryKey: ['BookedTrainerDetails', bookedTrainer],
@@ -20,11 +20,11 @@ const TrainerInfo = ({ bookedTrainer }) => {
         }
     });
 
-    console.log(bookedTrainer);
+   
     const { register, handleSubmit } = useForm();
 const axiosSecurePrivate = useAxiosSecurePrivate()
     const onSubmit = (formData) => {
-        console.log(formData); 
+      
         axiosSecurePrivate.post('/review',formData).then(res=>{
             if(res){
                 Swal.fire("Review added succefully!");

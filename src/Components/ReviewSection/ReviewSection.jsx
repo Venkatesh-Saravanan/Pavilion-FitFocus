@@ -11,17 +11,20 @@ import '../../Styles/SwiperSlide.css';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import useAxiosSecurePrivate from '../../Hook/useAxiosSecurePrivate';
 import { useQuery } from '@tanstack/react-query';
+import { axiosSecure } from '../../Hook/useAxiosSecure';
 
 const ReviewSection = () => {
-	const AxiosSecurePrivate=useAxiosSecurePrivate()
+
 	const { data, isLoading } = useQuery({
         queryKey: ['review'],
         queryFn: async () => {
-            const res = await AxiosSecurePrivate.get('/review');
+            const res = await axiosSecure.get('/review');
             return res.data;
         }
     });
-	console.log(data)
+    if (isLoading) {
+        return <div className="bg-red-500 text-3xl text-center">Loading.....</div>
+    }
     return (
 		
         <div className='container mx-auto w-[90%] mb-16'>
@@ -73,8 +76,6 @@ const ReviewSection = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                
-			
 			
 			</>
 		))

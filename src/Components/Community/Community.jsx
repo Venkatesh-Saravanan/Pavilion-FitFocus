@@ -5,6 +5,9 @@ import useCommunity from "../../Hook/useCommunity";
 
 const Community = () => {
 	const { posts, isLoading, error, refetch} = useCommunity()
+    if (isLoading) {
+        return <div className="bg-red-500 text-3xl text-center">Loading.....</div>
+    }
     return (
         <div className="lg:grid mt-20 grid-cols-3 container mx-auto gap-5">
 			{

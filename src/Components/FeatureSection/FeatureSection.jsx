@@ -14,7 +14,7 @@ const FeatureSection = () => {
     if (isloading) {
         return 'loading'
     }
-    
+    console.log(data)
     return (
 <>
 <div className="text-center">
@@ -22,7 +22,6 @@ const FeatureSection = () => {
     <p className="mt-2 mb-10 text-slate-500 ">Benefit from custom weight loss plans integrating exercise, diet, and ongoing support, guiding you <br /> towards safe and sustainable weight management.</p>
 </div>
         <div className="lg:grid gap-5 grid-cols-3 container mx-auto">
-
             {
                 data?.map(singleData => <>
                 <div className="  scale-90 hover:scale-95 transition-transform duration-300 ease-in-out">

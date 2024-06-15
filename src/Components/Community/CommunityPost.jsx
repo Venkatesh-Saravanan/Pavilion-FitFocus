@@ -15,9 +15,6 @@ const CommunityPost = ({ post, refetch }) => {
     });
     const [showFullPost, setShowFullPost] = useState(false);
 
-
-
-
     const toggleShowFullPost = () => {
         setShowFullPost(!showFullPost);
     };
@@ -46,7 +43,6 @@ const CommunityPost = ({ post, refetch }) => {
             await axiosSecure.put(`/forumPost/${id}`, {
                 totalUpvote: newUpvote,
             });
-
             setMessage(newMessage);
             refetch();
         } else {

@@ -74,7 +74,7 @@ const SingleTrainers = ({ data, isLoading, refetch }) => {
     // For rejection
     const onSubmitReject = async (rejectFormData) => {
         rejectFormData = { ...rejectFormData, AvailableDaysAWeek: data.AvailableDaysAWeek, };
-        console.log(rejectFormData)
+      
         try {
           await axiosSecurePrivate.put(`/trainers/${data._id}`, rejectFormData);
 

@@ -44,7 +44,7 @@ function UserProfile() {
           const response = await axiosSecure.put(`/user/${data.email}`, formData);
     
           if (response.status === 200) {
-            console.log('Profile updated successfully');
+           
             Swal.fire("User Profile updated successfully");
             refetch();
           } else {

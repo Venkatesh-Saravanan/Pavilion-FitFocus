@@ -14,7 +14,7 @@ function AddnewClass() {
     
 }, [ setValue]);
   const onSubmit = (data) => {
-    console.log(data);
+   
     axiosSecure.post('/NewClass',data)
     .then(response=>{
       

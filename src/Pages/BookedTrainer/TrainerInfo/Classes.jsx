@@ -21,7 +21,7 @@ const Classes = ({ classItem }) => {
 
         }
     });
-    console.log(classItemData)
+   
     return (
         <div className="w-[80%] mx-auto mb-5 p-5  font-Rilway  rounded-md shadow-md bg-slate-100 dark:bg-gray-50 dark:text-gray-800 border border-[#e6e5eb]">
             <div className="flex justify-between">

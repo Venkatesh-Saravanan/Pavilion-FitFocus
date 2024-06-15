@@ -4,10 +4,8 @@ import { useState } from "react";
 
 
 const Trainer = ({ trainer }) => {
-  // State to track whether "See More" button is clicked
-  const [showMore, setShowMore] = useState(false);
 
-  // Toggle function to handle "See More" button click
+  const [showMore, setShowMore] = useState(false);
   const toggleShowMore = () => {
     setShowMore(!showMore);
   };

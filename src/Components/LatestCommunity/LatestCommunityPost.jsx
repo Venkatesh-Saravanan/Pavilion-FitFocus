@@ -37,13 +37,10 @@ const LatestCommunityPost = ({ post, refetch }) => {
     const handleUpvote = async (id, upvote) => {
         if (user) {
             setCheckUpvote(prevCheckUpvote => !prevCheckUpvote);
-
             const newMessage = checkUpvote ? '' : 'You Upvoted This Post';
             const newUpvote = parseInt(upvote) + (checkUpvote ? -1 : 1);
-
             localStorage.setItem(`upvote_${id}`, checkUpvote.toString());
             localStorage.setItem(`message_${id}`, newMessage);
-
             await axiosSecure.put(`/forumPost/${id}`, {
                 totalUpvote: newUpvote,
             });

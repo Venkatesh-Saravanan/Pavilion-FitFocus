@@ -6,10 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 
 const TrainerSection = () => {
-    const { data, isLoading, error, refetch } =useTrainers()
-
-  
-    
+    const { data, isLoading, error, refetch } =useTrainers() 
     return (
         <div className="mb-20">
         <div>

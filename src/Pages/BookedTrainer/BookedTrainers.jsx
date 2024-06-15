@@ -14,10 +14,10 @@ const BookedTrainers = () => {
     },
   });
 
-  console.log(bookedTrainers);
+ 
 
   const uniqueTrainers = [...new Set(bookedTrainers?.map(item => item.trainerEmail))];
-  console.log(uniqueTrainers);
+ 
 
   return (
     <div>

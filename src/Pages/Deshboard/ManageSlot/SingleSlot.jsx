@@ -8,12 +8,12 @@ import useAxiosSecurePrivate from "../../../Hook/useAxiosSecurePrivate";
 const SingleSlot = ({ slot, trainerid, refetch }) => {
     const axiosSecurePrivte = useAxiosSecurePrivate()
     const { user } = UseAuth()
-    console.log(trainerid)
+
     const { data, isLoading, error } = useQuery({
         queryKey: ['singleslot', slot],
         queryFn: async () => {
             try {
-                const res = await axiosSecurePrivte.get(`http://localhost:5000/ckeckbooking/${user.email}/${slot}`);
+                const res = await axiosSecurePrivte.get(`/ckeckbooking/${user.email}/${slot}`);
                 return res.data;
             } catch (error) {
                 throw new Error("Failed to fetch slot data");
@@ -24,9 +24,9 @@ const SingleSlot = ({ slot, trainerid, refetch }) => {
     if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error: {error.message}</div>;
 
-    console.log(data);
+  
 
-    // Function to handle slot deletion
+    
     const handleDelete = async (id, slot) => {
         Swal.fire({
             title: "Are you sure?",
@@ -54,7 +54,7 @@ const SingleSlot = ({ slot, trainerid, refetch }) => {
 
             }
         });
-        console.log(id, slot)
+      
 
 
 
@@ -79,7 +79,7 @@ const SingleSlot = ({ slot, trainerid, refetch }) => {
                             </span>
                         </div>
                         <div>
-                            {/* Pass the handler function to onClick */}
+                            
                             <button onClick={() => handleDelete(trainerid, slot)} className="btn text-red-500"><FaTrash size={16} /></button>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ const SingleSlot = ({ slot, trainerid, refetch }) => {
 
 
                         <div className="col-span-1">
-                            {/* Pass the handler function to onClick */}
+                          
                             <button onClick={() => handleDelete(trainerid, slot)} className="btn col-span-1 text-red-500"><FaTrash size={16} /></button>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ const PaymentPage = () => {
     const { register, setValue, handleSubmit } = useForm();
     const { formData } = location.state || {};
 
-    console.log('formData:', formData);
+   
 
     const { data: classe, isLoading: classesLoading, refetch } = useQuery({
         queryKey: ['classe', formData?.selectedClass],
@@ -22,10 +22,10 @@ const PaymentPage = () => {
             const res = await axiosSecure.get(`/NewClass/${formData?.selectedClass}`);
             return res.data;
         },
-        enabled: !!formData?.selectedClass // Only fetch if class is selected
+        enabled: !!formData?.selectedClass 
     });
 
-   console.log(classe)
+
     const onSubmit = (data) => {
 
         axiosSecure.put(`/NewClass/${formData?.selectedClass}`, classe);

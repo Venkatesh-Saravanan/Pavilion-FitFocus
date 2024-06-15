@@ -6,11 +6,11 @@ import UseAuth from '../../../Hook/useAuth';
 
 function AddForumPost() {
     const { user } = UseAuth();
-    console.log(user)
+  
     const { register, setValue, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data);
+      
         axiosSecure.post('/forumPost', data)
             .then(response => {
                 const responseData = response.data;

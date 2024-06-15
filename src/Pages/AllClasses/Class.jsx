@@ -21,7 +21,7 @@ const Class = ({ Class,dataLength }) => {
         return <div>Error: {error.message}</div>;
     }
 
-    console.log(trainers);
+    
 
     return (
         <div className="bg-white border border-[#c4d6db] shadow-lg rounded-xl mx-5">

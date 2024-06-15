@@ -1,11 +1,10 @@
 import { MdPreview } from "react-icons/md";
-import { useState } from "react"; // Import useState hook for managing component state
+import { useState } from "react"; 
 
 const FeaturedClasse = ({ classData }) => {
-    // State to track whether to show full details
     const [showFullDetails, setShowFullDetails] = useState(false);
 
-    // Function to toggle between showing truncated and full details
+   
     const toggleDetails = () => {
         setShowFullDetails(!showFullDetails);
     };
@@ -16,7 +15,6 @@ const FeaturedClasse = ({ classData }) => {
             <div className="flex flex-col justify-between p-6 space-y-8">
                 <div className="space-y-2">
                     <h2 className="text-3xl font-semibold tracking-wide">{classData.className}</h2>
-                    {/* Conditional rendering based on showFullDetails state */}
                     <p className="dark:text-gray-800 text-sm">
                         {showFullDetails ? classData.details : classData.details.slice(0, 100)}
                         <span className="text-[#1882FF] font-bold text-lg ml-2 cursor-pointer" onClick={toggleDetails}>

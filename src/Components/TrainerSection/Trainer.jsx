@@ -4,10 +4,7 @@ import { useState } from "react";
 import { TbScanPosition } from "react-icons/tb";
 
 const Trainer = ({ trainer }) => {
-  // State to track whether "See More" button is clicked
   const [showMore, setShowMore] = useState(false);
-
-  // Toggle function to handle "See More" button click
   const toggleShowMore = () => {
     setShowMore(!showMore);
   };
@@ -55,7 +52,6 @@ const Trainer = ({ trainer }) => {
                   
                   <div className="flex w-full  justify-between items-center">
                   <div className="flex justify-center items-center  pt-3 space-x-4 align-center">
-                                {/* Social Media Links */}
                                <FaFacebook size={20}></FaFacebook>
                                <FaInstagram size={20}></FaInstagram>
                                <FaLinkedin size={20}></FaLinkedin>
