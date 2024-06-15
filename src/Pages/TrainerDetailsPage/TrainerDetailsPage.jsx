@@ -4,17 +4,18 @@ import { axiosSecure } from "../../Hook/useAxiosSecure";
 import AvailableSlots from "./AvailableSlots";
 import { FaFacebook, FaLinkedin } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import useAxiosSecurePrivate from "../../Hook/useAxiosSecurePrivate";
 
 const TrainerDetailsPage = () => {
     const { id } = useParams();
    
-
+    const axiosSecurePrivte = useAxiosSecurePrivate()
    
 
     const { data: trainer, isLoading, error } = useQuery({
         queryKey: ['TrainerDetails', id],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/trainers/${id}`);
+            const res = await axiosSecurePrivte.get(`/trainers/${id}`);
             return res.data;
         }
     });

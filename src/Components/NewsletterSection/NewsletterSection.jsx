@@ -8,7 +8,7 @@ const NewsletterSection = () => {
 
    
     const onSubmit = (data) => {
-        console.log(data);
+      
         
         axiosSecure.post("/newsLatter", {
           ...data,
@@ -18,7 +18,7 @@ const NewsletterSection = () => {
                 "Content-Type": 'application/json'
             }
         }).then(res=>{
-            console.log(res)
+            
             if(res.data.message==0){
                   toast("User already exist");
             }

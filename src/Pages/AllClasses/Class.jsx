@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { axiosSecure } from "../../Hook/useAxiosSecure";
+import { Link } from "react-router-dom";
 
-const Class = ({ Class }) => {
+const Class = ({ Class,dataLength }) => {
   
 
     const { data: trainers, isLoading, error } = useQuery({
@@ -35,10 +36,11 @@ const Class = ({ Class }) => {
                     </div>
                     <div className="mt-3 text-center pb-5">
                 <h1 className="font-semibold text-xl pb-2 font-Rilway">Trainer/Coach Who Took This Class</h1>
-                {trainers?.map(trainer => (
+                {trainers?.slice(0,5).map(trainer => (
                     <div key={trainer._id} className="inline-block mx-2">
+                        <Link to={`/trainers/${trainer._id}`}>
                        <img alt="" className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 dark:ring-violet-600 dark:ring-offset-gray-100" src={trainer.photoURL}/>
-                        
+                       </Link>
                     </div>
                 ))}
             </div>

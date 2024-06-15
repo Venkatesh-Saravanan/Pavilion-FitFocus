@@ -5,10 +5,12 @@ import { axiosSecure } from "../../Hook/useAxiosSecure";
 import { useState } from "react";
 import Select from 'react-select';
 import Swal from "sweetalert2";
+import useAxiosSecurePrivate from "../../Hook/useAxiosSecurePrivate";
 
 
 const BeATrainer = () => {
   const { user } = UseAuth()
+  const axiosSecurePrivte = useAxiosSecurePrivate()
   const daysOfWeekOptions = [
     { value: 'Sunday', label: 'Sunday' },
     { value: 'Monday', label: 'Monday' },
@@ -23,6 +25,7 @@ const BeATrainer = () => {
   const {
     register,
     setValue,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -32,25 +35,23 @@ const BeATrainer = () => {
     setValue('user_email', user.email || '')
     setValue('status', 'pending')
   }
-
+  
   const onSubmit = (data) => {
     const formDataWithSkills = { ...data, AvailableDaysAWeek: selectedDays, skills: skills };
-    console.log(formDataWithSkills);
     
-    axiosSecure.post('/trainers', formDataWithSkills, {
-        headers: {
-            "Content-Type": 'application/json'
-        }
+    axiosSecurePrivte.post('/trainers', formDataWithSkills, {
+       
     }).then(res => {
       
         if (res.status === 200) { 
-          
+          reset()
           if (res.data.message) {
             Swal.fire({
               icon: 'info',
               title: 'Aleart!',
               text: 'you are already Trainer or Requested for trainer ',
-              confirmButtonText: 'OK'
+              confirmButtonText: 'OK',
+             
           });
           } else {
             Swal.fire({
@@ -107,7 +108,7 @@ const BeATrainer = () => {
         {/* form start */}
         <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
           <div className="text-xl font-semibold  text-center">
-            <h1>Please Provide Your Information To <br /> <span className="text-[#2F7955] font-bold">Be A Trainer</span> </h1>
+            <h1>Please Provide Your Information To <br /> <span className="text-[#2F7955] text-2xl font-bold">Be A Trainer</span> </h1>
           </div>
           <div className="lg:flex items-center justify-center w-full gap-3">
             <div className="form-control w-full">
@@ -216,7 +217,8 @@ const BeATrainer = () => {
 
 
           {/* Available Days a Week */}
-          <div className="form-control">
+          <div className="lg:flex items-center justify-center w-full gap-3">
+          <div className="form-control w-full">
             <label className="label">
               <span className="label-text">Available Days a Week</span>
             </label>
@@ -227,8 +229,21 @@ const BeATrainer = () => {
               onChange={handleDaysChange}
             />
           </div>
-
-
+          <div className="form-control w-full">
+            <label className="label">
+              <span className="label-text">Experience (year)</span>
+            </label>
+            <input
+              type="number"
+              placeholder="Experience"
+              className="input input-bordered"
+              {...register("Experience", { required: true })}
+            />
+            {errors.Experience && (
+              <p className="text-red-500 ml-1">Experience is required</p>
+            )}
+          </div>
+          </div>
 
           {/* Available Time in a Day */}
           <div className="form-control">
@@ -267,7 +282,7 @@ const BeATrainer = () => {
               type="submit"
               className="btn w-[50%] mx-auto bg-[#2F7955] text-[#fff]"
             >
-              Sign Up
+              Applied
             </button>
           </div>
 

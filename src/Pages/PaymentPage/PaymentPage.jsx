@@ -5,9 +5,11 @@ import UseAuth from "../../Hook/useAuth";
 import { axiosSecure } from "../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
+import useAxiosSecurePrivate from "../../Hook/useAxiosSecurePrivate";
 
 const PaymentPage = () => {
     const { user } = UseAuth()
+    const axiosSecurePrivte = useAxiosSecurePrivate()
     const location = useLocation();
     const { register, setValue, handleSubmit } = useForm();
     const { formData } = location.state || {};
@@ -27,7 +29,7 @@ const PaymentPage = () => {
     const onSubmit = (data) => {
 
         axiosSecure.put(`/NewClass/${formData?.selectedClass}`, classe);
-        axiosSecure.post("/payment", data)
+        axiosSecurePrivte.post("/payment", data)
         .then(res=>{
             if(res){
                 if (res.data.message=="0") {
@@ -62,8 +64,11 @@ const PaymentPage = () => {
 
     return (
         <div>
-            <div className="flex flex-col mx-auto bg-slate-200 mt-10 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex font-Rilway text-xl flex-col mx-auto bg-slate-200 mt-10 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
                 <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="text-center font-bold text-2xl pb-10 text-[#2F7955]">
+                    Check Your Booking Details
+                    </div>
                     <div className="grid grid-cols-2">
                         <label className="block text-gray-700 font-bold text-base" htmlFor="trainerName">Trainer Name:</label>
                         <input disabled id="trainerName" className="block w-full bg-slate-200" {...register('trainerName')} />
@@ -106,7 +111,7 @@ const PaymentPage = () => {
 
 
 
-                    <button type="submit" className="block w-full bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4">
+                    <button type="submit" className="block w-full bg-[#2F7955] text-white font-bold py-2 px-4 rounded mt-4">
                         Confirm Booking
                     </button>
                 </form>

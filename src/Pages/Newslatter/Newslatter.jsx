@@ -1,11 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import { axiosSecure } from "../../Hook/useAxiosSecure";
+import useAxiosSecurePrivate from "../../Hook/useAxiosSecurePrivate";
 
 const Newslatter = () => {
+    const axiosSecurePrivte = useAxiosSecurePrivate()
     const { data, isLoading, error } = useQuery({
         queryKey: ['newslatter'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/newsLatter');
+            const res = await axiosSecurePrivte.get('/newsLatter',{
+                headers:{
+                  authorization: `Bearer ${localStorage.getItem('access-token')}`
+                }
+              });
             return res.data;
         }
     });

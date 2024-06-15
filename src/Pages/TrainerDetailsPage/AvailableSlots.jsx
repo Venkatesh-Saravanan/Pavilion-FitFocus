@@ -1,18 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import { axiosSecure } from "../../Hook/useAxiosSecure";
 import { Link } from "react-router-dom";
+import useAxiosSecurePrivate from "../../Hook/useAxiosSecurePrivate";
 
 
 const AvailableSlots = ({ slot, id,email }) => {
     console.log(slot, id, email)
-    
+    const axiosSecurePrivte = useAxiosSecurePrivate()
 
   
     const { data: bookingData, isLoading: bookedIsLoading, error: bookedError } = useQuery({
         queryKey: ['singleslot', slot],
         queryFn: async () => {
             try {
-                const res = await axiosSecure.get(`http://localhost:5000/ckeckbooking/${email}/${slot}`);
+                const res = await axiosSecurePrivte.get(`http://localhost:5000/ckeckbooking/${email}/${slot}`);
                 return res.data;
             } catch (error) {
                 throw new Error("Failed to fetch slot data");

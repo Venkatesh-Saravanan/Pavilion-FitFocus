@@ -6,8 +6,10 @@ import { useQuery } from "@tanstack/react-query";
 import UseAuth from "../../../Hook/useAuth";
 import Select from 'react-select';
 import useClasses from "../../../Hook/useClasses";
+import useAxiosSecurePrivate from "../../../Hook/useAxiosSecurePrivate";
 
 const AddNewSlot = () => {
+    const axiosSecurePrivte = useAxiosSecurePrivate()
     const { user, loading: authLoading } = UseAuth();
     const [slotTimes, setSlotTimes] = useState([]);
     const [selectedClasses, setSelectedClasses] = useState([]);
@@ -43,7 +45,7 @@ console.log(classes)
     const { data, isLoading, error, refetch } = useQuery({
         queryKey: ['appliedTrainer', user?.email],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/alltrainer/${user?.email}`);
+            const res = await axiosSecurePrivte.get(`/alltrainer/${user?.email}`);
             return res.data;
         },
         enabled: !!user?.email && !authLoading,
@@ -72,11 +74,12 @@ console.log(classes)
 
 
     const onSubmit = async (formData) => {
+        
         const formDataWithSlotTimes = { ...data, SlotTime: slotTimes, AvailableDaysAWeek: selectedDays, Classes: selectedClasses  };
         console.log(formDataWithSlotTimes)
         try {
-            console.log(data?._id)
-            const response = await axiosSecure.put(`/trainers/${data?._id}`, formDataWithSlotTimes);
+            
+            const response = await axiosSecurePrivte.put(`/trainers/${data?._id}`, formDataWithSlotTimes);
             if (response.status === 200) {
                 Swal.fire({
                     icon: 'success',
@@ -124,11 +127,11 @@ console.log(classes)
 
     return (
         <div>
-            <div className='p-5 mb-4 flex'>
+            <div className='p-5 mb-4 flex font-Rilway'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex gap-5">
                         <div>
-                            <img width={250} className="rounded-xl" height={250} src={data.photoURL} alt="" />
+                            <img width={250} className="rounded-xl" height={250} src={data?.photoURL} alt="" />
                         </div>
                         <div className="grid grid-cols-3">
                             <div>
@@ -195,7 +198,9 @@ console.log(classes)
                             </div>
                         </div>
                     </div>
-                    <div className="mb-4 border-b pb-5 border-black flex items-center gap-10">
+                    <hr className='-ml-0 h-[1px] border-none bg-slate-300 mx-auto mb-5 w-[
+                        100%]' />
+                    <div className="mb-4 border-b pb-5 border-gray-300 flex items-center justify-between gap-10">
                         <label className="block text-gray-700 font-bold text-base">Other Info:</label>
                         <input
                             disabled type='textarea'
@@ -204,7 +209,7 @@ console.log(classes)
                         />
                         <h1>{data.otherInfo}</h1>
                     </div>
-
+<div className="w-[60%] mx-auto border border-blue-300 p-5 shadow-xl rounded-xl">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Available Days a Week</span>
@@ -216,7 +221,17 @@ console.log(classes)
                             onChange={handleDaysChange}
                         />
                     </div>
-
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Select Classes</span>
+                        </label>
+                        <Select
+                            isMulti
+                            defaultValue={selectedClasses}
+                            onChange={setSelectedClasses}
+                            options={options}
+                        />
+                    </div>
 
 
                     <div className="form-control">
@@ -239,20 +254,11 @@ console.log(classes)
                         </div>
                     </div>
 
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Select Classes</span>
-                        </label>
-                        <Select
-                            isMulti
-                            defaultValue={selectedClasses}
-                            onChange={setSelectedClasses}
-                            options={options}
-                        />
-                    </div>
-
+                    
+                    
                     <div className="modal-action">
-                        <button onClick={() => handleUpdate(data._id)} type="submit" className="btn">Submit</button>
+                        <button onClick={() => handleUpdate(data._id)} type="submit" className="btn text-white px-5 mx-auto bg-[#155E75]">ADD</button>
+                    </div>
                     </div>
                 </form>
             </div>

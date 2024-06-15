@@ -3,31 +3,31 @@ import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import '../../Styles/Header.css';
 import UseAuth from '../../Hook/useAuth';
-import { FcInvite } from 'react-icons/fc';
 import useUserByEmail from '../../Hook/useUserByEmail';
+
+
+
 
 const Header = () => {
   const { user, logOut } = UseAuth();
+
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
-
   const { data, isLoading, error, refetch } = useUserByEmail();
 
   useEffect(() => {
     if (data) {
       setUserData(data);
     } else {
-      setUserData(null); // Reset user data if data is null
+      setUserData(null); 
     }
   }, [data]);
 
 
-  if(isLoading){
-    
-  }
+ 
   const handleLogout = () => {
     logOut();
-    setUserData(null); // Reset user data on logout
+    setUserData(null); 
     navigate('/');
   };
 
@@ -98,38 +98,45 @@ const Header = () => {
                 <span>Home</span>
               </div>
             </NavLink>
-            <div className="border-r-2"></div>
+           
             <NavLink to="/trainers" className="font-normal text-base" activeClassName="active">
               <div className="flex items-center gap-1 justify-center">
                 <span>All Trainer Page</span>
               </div>
             </NavLink>
-            <div className="border-r-2"></div>
+           
             <NavLink to="/allclass" className="font-normal text-base" activeClassName="active">
               <div className="flex items-center gap-1 justify-center">
                 <span>All Classes Page</span>
               </div>
             </NavLink>
-            <div className="border-r-2"></div>
+           
             <NavLink to="/community" className="font-normal text-base" activeClassName="active">
               <div className="flex items-center gap-1 justify-center">
                 <span>Community</span>
               </div>
             </NavLink>
-            <div className="border-r-2"></div>
-            {userData && userData.role === 'trainer' && (
+           
+            {userData && (userData.role === 'trainer' || userData.role === 'admin') &&(
               <>
                 <NavLink to="/deshboard" className="font-normal text-base" activeClassName="active">
                   <div className="flex items-center gap-1 justify-center">
                     <span>Dashboard</span>
                   </div>
-                </NavLink>
-                <div className="border-r-2"></div>
-                
-                
+                </NavLink> 
                
               </>
             )}
+
+            {
+              user && (
+                <NavLink to="/profile" className="font-normal text-base" activeClassName="active">
+                  <div className="flex items-center gap-1 justify-center">
+                    <span>Profile</span>
+                  </div>
+                </NavLink>
+              )
+            }
           </Navbar.Collapse>
         </Navbar>
       </div>

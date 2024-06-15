@@ -93,7 +93,7 @@ function AddnewClass() {
           </label>
           <textarea
             placeholder="Details"
-            className="input input-bordered"
+            className="input input-bordered h-32"
             {...register('details', { required: true })}
           ></textarea>
           {errors.details && (
@@ -101,7 +101,7 @@ function AddnewClass() {
           )}
         </div>
         <div className='flex items-center'>
-        <button type="submit" className="btn mx-auto w-36 btn-primary mt-4">Submit</button>
+        <button type="submit" className="btn mx-auto w-36 btn-primary mt-4">ADD</button>
         </div>
         
       </form>

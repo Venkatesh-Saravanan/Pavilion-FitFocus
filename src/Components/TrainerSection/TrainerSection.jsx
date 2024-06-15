@@ -17,7 +17,7 @@ const TrainerSection = () => {
                 <h1 className="text-4xl font-Prata font-bold mt-24" >Trainer</h1>
                 <p className="mt-2 mb-10 text-slate-500 ">Benefit from custom weight loss plans integrating exercise, diet, and ongoing support, guiding you <br /> towards safe and sustainable weight management.</p>
             </div>
-            <div className="lg:grid grid-cols-3 container mx-auto ">
+            <div className="lg:grid gap-3 grid-cols-3 container mx-auto ">
                 {
                     data?.slice(0,3).map(trainer=> <Trainer key={trainer._id} trainer={trainer}></Trainer>)
                 }
@@ -25,7 +25,7 @@ const TrainerSection = () => {
             
         </div>
         <div className="float-end w-60 mt-3 container mx-auto ">
-                <Link to={`/trainers`} ><button className="mx-auto border border-[#084711] w-44 btn px-5  hover:bg-[#65d877] text-[#218b31] font-Montserrat text-base">See More <FaArrowRight /></button></Link>
+                <Link to={`/trainers`} ><button className="mx-auto border border-[#084711] w-44 btn px-5  hover:bg-[#605985] text-[#1E1743] font-Montserrat text-base">See More <FaArrowRight /></button></Link>
             </div>
         </div>
     );

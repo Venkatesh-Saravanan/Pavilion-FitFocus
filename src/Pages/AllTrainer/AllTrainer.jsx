@@ -6,7 +6,7 @@ import useTrainers from "../../Hook/useTrainers";
 const AllTrainer = () => {
     const { data, isLoading, error, refetch } =useTrainers()
 
-  
+  console.log(data)
     
     return (
         <div>

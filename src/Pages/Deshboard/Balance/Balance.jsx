@@ -3,24 +3,25 @@ import { axiosSecure } from "../../../Hook/useAxiosSecure";
 import { useEffect, useState } from "react";
 import { RiPriceTagFill } from "react-icons/ri";
 import { PieChart } from 'react-minimal-pie-chart';
+import useAxiosSecurePrivate from "../../../Hook/useAxiosSecurePrivate";
 
 const Balance = () => {
     const [price, setPrice] = useState(0);
 
-    // Fetch payments data
+    const axiosSecurePrivte = useAxiosSecurePrivate()
     const { data: paymentsData, isLoading, error } = useQuery({
         queryKey: ['payments'],
         queryFn: async () => {
-            const res = await axiosSecure.get("/payment");
+            const res = await axiosSecurePrivte.get("/payment");
             return res.data;
         }
     });
 
-    // Fetch newsletter data
+   
     const { data: newsletterData, isLoading: newsletterLoading, error: newsletterError } = useQuery({
         queryKey: ['newsletter'],
         queryFn: async () => {
-            const res = await axiosSecure.get("/newsLatter");
+            const res = await axiosSecurePrivte.get("/newsLatter");
             return res.data;
         }
     });
@@ -29,7 +30,10 @@ const Balance = () => {
         if (paymentsData) {
             let totalPrice = 0;
             paymentsData.forEach(payment => {
-                totalPrice += parseInt(payment.price, 10);
+               
+                if (!isNaN(parseInt(payment.price))) {
+                    totalPrice += parseInt(payment.price);
+                }
             });
             setPrice(totalPrice);
         }
@@ -79,7 +83,7 @@ const Balance = () => {
 
                     <div className="overflow-x-auto col-span-3">
                         <table className="table">
-                            {/* head */}
+                          
                             <thead>
                                 <tr className="bg-[#0C7EA0] text-white text-base text-center">
                                     <th></th>

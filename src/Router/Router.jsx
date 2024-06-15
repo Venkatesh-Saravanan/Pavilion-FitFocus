@@ -26,6 +26,11 @@ import PieChart from "../Pages/AppliedTrainer/Test";
 import ManageSlot from "../Pages/Deshboard/ManageSlot/ManageSlot";
 import AddForumPost from "../Pages/Deshboard/AddForumPost/AddForumPost";
 import Community from "../Components/Community/Community";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import Layout from "../Pages/Profile/Layout";
+import UserProfile from "../Pages/Profile/UserProfile";
+import ActivityLogpage from "../Pages/Profile/ActivityLogpage/ActivityLogpage";
+import BookedTrainers from "../Pages/BookedTrainer/BookedTrainers";
 
   const router = createBrowserRouter([
     {
@@ -46,7 +51,7 @@ import Community from "../Components/Community/Community";
         },
         {
           path:"/beATrainer",
-          element: <BeATrainer/>
+          element: <PrivateRoute><BeATrainer/></PrivateRoute>
         },
         {
           path:"/trainers",
@@ -54,11 +59,11 @@ import Community from "../Components/Community/Community";
         },
         {
           path:"/trainers/:id",
-          element: <TrainerDetailsPage></TrainerDetailsPage>
+          element: <PrivateRoute><TrainerDetailsPage></TrainerDetailsPage></PrivateRoute>
         },
         {
           path:"/trainers/:id/:time",
-          element:<TrainerBookedPage></TrainerBookedPage>
+          element:<PrivateRoute><TrainerBookedPage></TrainerBookedPage></PrivateRoute>
         },
         {
           path:"/allclass",
@@ -72,6 +77,24 @@ import Community from "../Components/Community/Community";
         {
           path:"/community",
           element:<Community></Community>
+        },
+        {
+          path:"/profile",
+          element: <Layout></Layout>,
+          children:[
+            {
+              path:"/profile",
+              element: <UserProfile></UserProfile>
+            },
+            {
+              path:"/profile/ActivityLogpage",
+              element: <ActivityLogpage></ActivityLogpage>
+            },
+            {
+              path:"/profile/BookedTrainers",
+              element: <BookedTrainers></BookedTrainers>
+            }
+          ]
         }
       ]
     },
@@ -81,46 +104,47 @@ import Community from "../Components/Community/Community";
       children:[
         {
           path:"/deshboard",
-          element:<Balance></Balance>
+          element:<PrivateRoute><Balance></Balance></PrivateRoute> 
         },
         {
           path:"/deshboard/appliedTrainer",
-          element:<AppliedTrainer></AppliedTrainer>
+          element: <PrivateRoute><AppliedTrainer></AppliedTrainer></PrivateRoute> 
         },
         {
           path:"/deshboard/test",
-          element:<PieChart></PieChart>
+          element: <PieChart></PieChart>
         },
         {
           path:"/deshboard/newslatter",
-          element: <Newslatter></Newslatter>
+          element:<PrivateRoute> <Newslatter></Newslatter></PrivateRoute>
         },
         {
           path:"/deshboard/trainer",
-          element:<TrainerDashboard></TrainerDashboard>
+          element:<PrivateRoute><TrainerDashboard></TrainerDashboard></PrivateRoute>
         },
         {
           path:"/deshboard/trainers",
-          element:<Trainers></Trainers>
+          element:<PrivateRoute><Trainers></Trainers></PrivateRoute>
         },
         {
           path:"/deshboard/addslot",
-          element:<AddNewSlot></AddNewSlot>
+          element:<PrivateRoute><AddNewSlot></AddNewSlot></PrivateRoute>
         },
         {
           path:"/deshboard/addnewclass",
-          element:<AddnewClass></AddnewClass>
+          element:<PrivateRoute><AddnewClass></AddnewClass></PrivateRoute>
         },
         {
           path:"/deshboard/manageslot",
-          element: <ManageSlot></ManageSlot>
+          element: <PrivateRoute><ManageSlot></ManageSlot></PrivateRoute>
         },
         {
           path:"/deshboard/addForumPost",
-          element: <AddForumPost></AddForumPost>
+          element: <PrivateRoute><AddForumPost></AddForumPost></PrivateRoute>
         },
       ]
-    }
+    },
+    
   ]);
 
 export default router;

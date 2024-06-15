@@ -2,14 +2,16 @@ import { useQuery } from "@tanstack/react-query";
 import UseAuth from "../../../Hook/useAuth";
 import { axiosSecure } from "../../../Hook/useAxiosSecure";
 import SingleSlot from "./SingleSlot";
+import useAxiosSecurePrivate from "../../../Hook/useAxiosSecurePrivate";
 
 const ManageSlot = () => {
+    const axiosSecurePrivte = useAxiosSecurePrivate()
     const { user } = UseAuth();
 
     const { data: trainer, isLoading, error, refetch } = useQuery({
         queryKey: ['TrainerDetails'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/alltrainer/${user.email}`);
+            const res = await axiosSecurePrivte.get(`/alltrainer/${user.email}`);
             return res.data;
         }
     });

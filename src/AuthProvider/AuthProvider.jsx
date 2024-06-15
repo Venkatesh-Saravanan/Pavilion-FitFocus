@@ -14,12 +14,13 @@ import {
 
   import PropTypes from 'prop-types';
 import auth from "../Firebase/Firebase.config";
+import useAxiosSecure from "../Hook/useAxiosSecure";
   
   export const AuthContext = createContext(null);
   const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(true);
     const [loading, setLoading] = useState(true);
-  
+    const axiosSecure = useAxiosSecure();
     //PROVIDER
     const googleProvider = new GoogleAuthProvider();
     const GithubProvider = new GithubAuthProvider();
@@ -85,11 +86,27 @@ import auth from "../Firebase/Firebase.config";
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         setUser(user);
         setLoading(false);
+        if (user) {
+          // get token and store client
+          const userInfo = { email: user.email };
+          axiosSecure.post('/jwt', userInfo)
+              .then(res => {
+                  if (res.data.token) {
+                      localStorage.setItem('access-token', res.data.token);
+                      setLoading(false);
+                  }
+              })
+      }
+      else {
+        // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
+        localStorage.removeItem('access-token');
+        setLoading(false);
+    }
       });
       return () => {
         unsubscribe();
       };
-    }, []);
+    }, [axiosSecure]);
   
     const values = {
       loading,

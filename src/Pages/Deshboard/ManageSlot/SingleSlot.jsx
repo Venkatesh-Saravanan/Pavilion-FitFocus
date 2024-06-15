@@ -3,15 +3,17 @@ import { axiosSecure } from "../../../Hook/useAxiosSecure";
 import { FaTrash } from "react-icons/fa"; // Fixed icon import
 import UseAuth from "../../../Hook/useAuth";
 import Swal from "sweetalert2";
+import useAxiosSecurePrivate from "../../../Hook/useAxiosSecurePrivate";
 
 const SingleSlot = ({ slot, trainerid, refetch }) => {
+    const axiosSecurePrivte = useAxiosSecurePrivate()
     const { user } = UseAuth()
     console.log(trainerid)
     const { data, isLoading, error } = useQuery({
         queryKey: ['singleslot', slot],
         queryFn: async () => {
             try {
-                const res = await axiosSecure.get(`http://localhost:5000/ckeckbooking/${user.email}/${slot}`);
+                const res = await axiosSecurePrivte.get(`http://localhost:5000/ckeckbooking/${user.email}/${slot}`);
                 return res.data;
             } catch (error) {
                 throw new Error("Failed to fetch slot data");
@@ -83,9 +85,9 @@ const SingleSlot = ({ slot, trainerid, refetch }) => {
                     </div>
                 </div>
             ) : (
-                <div className="relative mr-3 h-36 bg-slate-950 rounded-lg ">
+                <div className="relative mr-3 h-36 bg-slate-950 rounded-lg  mb-3 ">
                     <h2 className="p-1 px-1   text-white bg-red-500 absolute -top-0 -left-0">Available</h2>
-                    <div className="grid grid-cols-4 items-center justify-between">
+                    <div className="grid grid-cols-4 items-center gap-3justify-between">
                         <div className="col-span-3 text-center text-white">
                             <div className="  text-2xl font-semibold text-center p-5 mb-2 rounded-lg">{slot}</div>
                             <h1> an open canvas of possibilities!</h1>

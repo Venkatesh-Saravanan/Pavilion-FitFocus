@@ -4,7 +4,7 @@ import UseAuth from "../../Hook/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const LatestCommunityPost = ({ post, refetch }) => {
-    console.log(post)
+    
     const { user } = UseAuth()
     const location = useLocation()
     const navigate = useNavigate()
@@ -56,7 +56,7 @@ const LatestCommunityPost = ({ post, refetch }) => {
     };
 
     return (
-        <div>
+        <div className="font-Rilway">
             <div className="flex flex-col border border-slate-200 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
                 <div className="flex space-x-4">
                     <img alt="" src={post.postOwnerimage} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
@@ -90,7 +90,7 @@ const LatestCommunityPost = ({ post, refetch }) => {
                             </svg>
                             <div className="flex item-center justify-evenly gap-20">
                                 <span>{post.totalUpvote}</span>
-                                <span>{message}</span>
+                                <span className="text-[#1E1743] font-Rilway  text-base">{message}</span>
                             </div>
                         </button>
                     </div>

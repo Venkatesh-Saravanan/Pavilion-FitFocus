@@ -8,58 +8,34 @@ import UseAuth from "../../Hook/useAuth";
 import { useEffect, useState } from "react";
 import SingleTrainers from "./SingleTrainers";
 import useTrainers from "../../Hook/useTrainers";
+import useAxiosSecurePrivate from "../../Hook/useAxiosSecurePrivate";
 
 const AppliedTrainer = () => {
-  
+  const axiosSecurePrivte = useAxiosSecurePrivate()
   const { data: datas, isLoading, error, refetch } = useQuery({
     queryKey: ['appliedTrainer'],
     queryFn: async () => {
-      const res = await axiosSecure.get('/trainer/pending');
+      const res = await axiosSecurePrivte.get('/trainer/pending');
       return res.data;
     }
   });
+  if (isLoading || !datas) {
+    return <div>Loading...</div>;
+}
 
   const { user } = UseAuth();
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm();
-  const [selectedData, setSelectedData] = useState(null); // State to hold selected data for modal
  
-  const onSubmit = (data) => {
-    console.log(data);
-    axiosSecure.post('/trainers', data, {
-      headers: {
-        "Content-Type": 'Application/json'
-      }
-    });
-  };
 
-  useEffect(() => {
-    if (user) {
-      setValue('name', user.displayName || ''); 
-      setValue('photoURL', user.photoURL || ''); 
-      setValue('user_email', user.email || ''); 
-    }
-    if(datas){
-      setValue('age', datas.age || '');
-    }
-  }, [user, setValue]);
+ 
 
-  const openModal = (data) => {
-    setSelectedData(data); // Set selected data for modal
-    document.getElementById('my_modal_5').showModal(); // Open modal
-  };
-
+ 
   return (
     <>
       <div className="text-center text-2xl font-bold font-Prata mt-10">Applied For Trainer</div>
       <div className="grid grid-cols-3 gap-2 w-[100%] p-3">
        {
-        datas?.map(data=><SingleTrainers key={data._id} data={data} refetch={refetch}></SingleTrainers>)
+        datas?.map(data=><SingleTrainers key={data._id} data={data} refetch={refetch} isLoading={isLoading}></SingleTrainers>)
        }
       </div>
 

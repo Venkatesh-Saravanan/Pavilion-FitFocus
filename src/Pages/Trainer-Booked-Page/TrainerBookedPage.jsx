@@ -4,8 +4,10 @@ import { axiosSecure } from "../../Hook/useAxiosSecure";
 import { useForm } from "react-hook-form";
 import useClasses from "../../Hook/useClasses";
 import { useEffect, useState } from "react";
+import useAxiosSecurePrivate from "../../Hook/useAxiosSecurePrivate";
 
 const TrainerBookedPage = () => {
+    const axiosSecurePrivte = useAxiosSecurePrivate()
     const { id, time } = useParams();
     const [selectedClass, setSelectedClass] = useState('');
     const [formData, setFormData] = useState(); // Corrected state declaration
@@ -13,7 +15,7 @@ const TrainerBookedPage = () => {
     const { data: trainer, isLoading, error } = useQuery({
         queryKey: ['TrainerBooked', id],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/trainers/${id}`);
+            const res = await axiosSecurePrivte.get(`/trainers/${id}`);
             return res.data;
         }
     });
@@ -50,8 +52,12 @@ const TrainerBookedPage = () => {
 
     return (
         <div>
-            <div className="flex flex-col mx-auto bg-slate-200 mt-10 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
+
+            <div className="flex font-Rilway text-xl  flex-col mx-auto bg-slate-200 mt-10 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="text-center font-bold text-2xl pb-10 text-[#2F7955]">
+                    Book Your Fitness Session
+                    </div>
                     <div className="grid grid-cols-2">
                         <label className="block  text-gray-700 font-bold text-base" htmlFor="trainerName">Trainer Name :</label>
                         <input disabled  id="trainerName" className="block  w-full bg-slate-200" {...register('trainerName')} />
@@ -75,14 +81,12 @@ const TrainerBookedPage = () => {
                                 <div key={cls.className} className="mr-4">
                                     <input
                                     required
-                                        type="radio"
-                                        id={cls.className}
-                                        name="class"
-                                        value={cls.className}
-                                        checked={selectedClass === cls.className}
-                                        onChange={() => setSelectedClass(cls.className)}
-                                        disabled={selectedClass && selectedClass !== cls.className}
-                                        className="mr-2"
+                                    type="radio"
+                                    id={cls.className}
+                                    name="class"
+                                    value={cls.className}
+                                    onChange={() => setSelectedClass(cls.className)}
+                                    className="mr-2"
                                     />
                                     <label className="text-gray-700 font-bold text-base" htmlFor={cls.className}>{cls.className}</label>
                                 </div>
@@ -98,8 +102,8 @@ const TrainerBookedPage = () => {
                             <option value="premium">Premium</option>
                         </select>
                     </div>
-                    <h1 className="text-green-500  mb-4">Please show below to know about our package details</h1>
-                    <button onClick={handleNavigate} type="submit" className="block w-full bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4">
+                    <h1 className="text-green-500 text-lg mb-4">Please show below to know about our package details</h1>
+                    <button onClick={handleNavigate} type="submit" className="block w-full bg-[#2F7955] text-white font-bold py-2 px-4 rounded mt-4">
                    
                    join
                 </button>
