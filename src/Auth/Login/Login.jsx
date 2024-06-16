@@ -90,14 +90,14 @@ const Login = () => {
         </div>
 
         <div className="form-control mt-6">
-          <button type="submit" className="btn text-[#fff] bg-[#0C7EA0]">
+          <button type="submit" className="btn text-[#fff] bg-[#1E1743]">
             Sign In
           </button>
         </div>
         <div className="flex  items-center ">
           <p>New User?</p>
           <Link to="/signup">
-            <button className="btn text-[#0C7EA0] bg-slate-100">SignUp</button>
+            <button className="btn text-[#1E1743] bg-slate-100">SignUp</button>
           </Link>
         </div>
         <SocialLogin></SocialLogin>

@@ -47,11 +47,19 @@ const Sidebar = () => {
 
                     <div className="divide-y dark:divide-gray-300">
                         <ul className="pt-2 pb-4 space-y-1 text-sm">
+                        <li className="">
+                                        <Link to="/deshboard">
+                                            <a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
+                                                <FaUserFriends />
+                                                <span>DeshBoard</span>
+                                            </a>
+                                        </Link>
+                                    </li>
                             {
                                 userData?.role === "admin" && (
                                     <>
                                     <li className="">
-                                        <Link to="/deshboard/">
+                                        <Link to="/deshboard/Balance">
                                             <a rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                                 <FaUserFriends />
                                                 <span>Balance</span>

@@ -6,9 +6,7 @@ import LatestCommunityPost from "./LatestCommunityPost";
 
 const LatestCommunity = () => {
 	const { posts, isLoading, error, refetch} = useCommunity()
-    if (isLoading) {
-        return <div className="bg-red-500 text-3xl text-center">Loading.....</div>
-    }
+   
     return (
         <>
          <div className="text-center">

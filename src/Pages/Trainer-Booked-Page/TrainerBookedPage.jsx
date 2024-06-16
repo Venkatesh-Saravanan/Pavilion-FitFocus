@@ -103,7 +103,7 @@ const TrainerBookedPage = () => {
                         </select>
                     </div>
                     <h1 className="text-green-500 text-lg mb-4">Please show below to know about our package details</h1>
-                    <button onClick={handleNavigate} type="submit" className="block w-full bg-[#2F7955] text-white font-bold py-2 px-4 rounded mt-4">
+                    <button onClick={handleNavigate} type="submit" className="block w-full bg-[#1E1743] text-white font-bold py-2 px-4 rounded mt-4">
                    
                    join
                 </button>

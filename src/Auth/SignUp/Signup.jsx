@@ -165,7 +165,7 @@ console.log(data.email)
           <div className="form-control mt-6">
             <button
               type="submit"
-              className="btn w-[50%] mx-auto bg-[#0C7EA0] text-[#fff]"
+              className="btn w-[50%] mx-auto bg-[#1E1743] text-[#fff]"
             >
               Sign Up
             </button>
@@ -173,7 +173,7 @@ console.log(data.email)
           <div className="flex gap-5 items-center ">
             <p>Already have an account?</p>
             <Link to="/login">
-              <button className="btn bg-[#40a65] text-[#006aff] bg-slate-100">
+              <button className="btn bg-[#40a65] text-[#1E1743] bg-slate-100">
                 Login
               </button>
             </Link>

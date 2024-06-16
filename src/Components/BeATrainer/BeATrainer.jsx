@@ -274,7 +274,7 @@ const BeATrainer = () => {
           <div className="form-control mt-6">
             <button
               type="submit"
-              className="btn w-[50%] mx-auto bg-[#2F7955] text-[#fff]"
+              className="btn w-[50%] mx-auto bg-[#1E1743] text-[#fff]"
             >
               Applied
             </button>

@@ -29,7 +29,7 @@ const AvailableSlots = ({ slot, id,email }) => {
         <div>
             {isSlotBooked ? (
                 <div className="bg-slate-950 ml-3 text-white text-center p-5 mb-2 rounded-lg relative">
-                    <h2 className=" p-1 px-1   text-white bg-red-500 absolute -top-0 -left-0">Booked</h2>
+                    <h2 className=" p-1 px-1   text-white bg-green-500 absolute -top-0 -left-0">Booked</h2>
                     <h2 className="text-2xl font-semibold">{slot}</h2>
                     <h1>Booked By:</h1>
                     <span className="text-sm text-center text-gray-400 dark:text-gray-600">

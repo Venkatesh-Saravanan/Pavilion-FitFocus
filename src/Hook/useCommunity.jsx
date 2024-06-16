@@ -3,9 +3,9 @@ import { axiosSecure } from "./useAxiosSecure";
 
 const useCommunity = () => {
     const { data: posts, isLoading, error, refetch } = useQuery({
-        queryKey: ['forumPosts'], // Renamed the query key to 'forumPosts'
+        queryKey: ['forumPosts'], 
         queryFn: async () => {
-            const res = await axiosSecure.get("/forumPost"); // Removed '/forumPost' from the query URL
+            const res = await axiosSecure.get("/forumPost"); 
             return res.data;
         }
     });

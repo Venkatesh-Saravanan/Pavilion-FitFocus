@@ -37,7 +37,7 @@ const TrainerDetailsPage = () => {
                     <p className="text-xl font-medium text-center">At FitFocus, we pride ourselves on having an elite team of dedicated trainers who are passionate about helping you achieve your fitness goals. </p>
                     <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
                         <Link to={"/beATrainer"}>
-                            <button className="px-8 py-3 text-lg font-semibold rounded bg-[#2F7955]  text-gray-50 dark:text-gray-900">Get started</button>
+                            <button className="px-8 py-3 text-lg font-semibold rounded bg-[#1E1743]  text-gray-50 dark:text-gray-900">Be A Trainer</button>
                         </Link>
                     </div>
                 </div>

@@ -31,6 +31,7 @@ import Layout from "../Pages/Profile/Layout";
 import UserProfile from "../Pages/Profile/UserProfile";
 import ActivityLogpage from "../Pages/Profile/ActivityLogpage/ActivityLogpage";
 import BookedTrainers from "../Pages/BookedTrainer/BookedTrainers";
+import DeshboardHome from "../Components/DeshboardHome/DeshboardHome";
 
   const router = createBrowserRouter([
     {
@@ -104,6 +105,10 @@ import BookedTrainers from "../Pages/BookedTrainer/BookedTrainers";
       children:[
         {
           path:"/deshboard",
+          element:<PrivateRoute><DeshboardHome></DeshboardHome> </PrivateRoute> 
+        },
+        {
+          path:"/deshboard/Balance",
           element:<PrivateRoute><Balance></Balance></PrivateRoute> 
         },
         {

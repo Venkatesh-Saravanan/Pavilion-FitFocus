@@ -6,7 +6,9 @@ import { axiosSecure } from "../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecurePrivate from "../../Hook/useAxiosSecurePrivate";
-
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./CheckoutForm";
 const PaymentPage = () => {
     const { user } = UseAuth()
     const axiosSecurePrivte = useAxiosSecurePrivate()
@@ -67,7 +69,10 @@ const PaymentPage = () => {
             <div className="flex font-Rilway text-xl flex-col mx-auto bg-slate-200 mt-10 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="text-center font-bold text-2xl pb-10 text-[#2F7955]">
-                    Check Your Booking Details
+                    Check Your payment history 
+                    </div>
+                    <div>
+
                     </div>
                     <div className="grid grid-cols-2">
                         <label className="block text-gray-700 font-bold text-base" htmlFor="trainerName">Trainer Name:</label>
@@ -111,7 +116,7 @@ const PaymentPage = () => {
 
 
 
-                    <button type="submit" className="block w-full bg-[#2F7955] text-white font-bold py-2 px-4 rounded mt-4">
+                    <button type="submit" className="block w-full bg-[#1E1743] text-white font-bold py-2 px-4 rounded mt-4">
                         Confirm Booking
                     </button>
                 </form>

@@ -22,9 +22,7 @@ const ReviewSection = () => {
             return res.data;
         }
     });
-    if (isLoading) {
-        return <div className="bg-red-500 text-3xl text-center">Loading.....</div>
-    }
+   
     return (
 		
         <div className='container mx-auto w-[90%] mb-16'>
