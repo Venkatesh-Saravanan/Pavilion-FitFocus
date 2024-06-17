@@ -62,20 +62,10 @@ const Header = () => {
                   <span className="block text-sm">{user.displayName}</span>
                   <span className="block truncate text-sm font-medium">{user.email}</span>
                 </Dropdown.Header>
-                <Dropdown.Item>
-                  <Link to={`/MyFoods/${user.email}`}>
-                    <div className="flex items-center gap-1 justify-center">
-                      <span>My Foods</span>
-                    </div>
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to={`/MyFoodsRequest/${user.email}`}>
-                    <div className="flex items-center gap-1 justify-center">
-                      <span>My Food Requests</span>
-                    </div>
-                  </Link>
-                </Dropdown.Item>
+                {/* <Dropdown.Item>
+                  
+                </Dropdown.Item> */}
+               
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={handleLogout}>Sign out</Dropdown.Item>
               </Dropdown>

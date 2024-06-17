@@ -129,7 +129,7 @@ function UserProfile() {
 
            
 <div className='text-center '>
-<button type="submit" className="btn px-5 text-center text-white bg-[#2F7955] mt-4">Edit</button>
+<button type="submit" className="btn px-5 text-center text-white bg-[#1E1743] mt-4">Edit</button>
 </div>
          
         </form>

@@ -10,9 +10,6 @@ import UseAuth from "../../Hook/useAuth";
 import { axiosSecure } from "../../Hook/useAxiosSecure";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
-
-
-
 const Signup = () => {
   const [passError, setPassError] = useState(null);
   const [pass, setPass] = useState(false);

@@ -32,6 +32,7 @@ import UserProfile from "../Pages/Profile/UserProfile";
 import ActivityLogpage from "../Pages/Profile/ActivityLogpage/ActivityLogpage";
 import BookedTrainers from "../Pages/BookedTrainer/BookedTrainers";
 import DeshboardHome from "../Components/DeshboardHome/DeshboardHome";
+import PaymentHistory from "../Pages/PaymentPage/PaymentHistory";
 
   const router = createBrowserRouter([
     {
@@ -74,6 +75,10 @@ import DeshboardHome from "../Components/DeshboardHome/DeshboardHome";
         {
           path:"/payment",
           element:<PaymentPage></PaymentPage>
+        },
+        {
+          path:"/paymentHistory",
+          element:<PaymentHistory></PaymentHistory>
         },
         {
           path:"/community",

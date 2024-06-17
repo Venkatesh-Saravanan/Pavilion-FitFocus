@@ -74,7 +74,7 @@ const Balance = () => {
                                     <RiPriceTagFill size={48} />
                                 </div>
                                 <div>
-                                    <h1>{paymentsData.length}</h1>
+                                    <h1>{paymentsData?.length}</h1>
                                 </div>
                             </div>
                             <h1 className="mt-5 text-xl text-center">Total Paid User</h1>
@@ -126,8 +126,8 @@ const Balance = () => {
                     />
                 </div>
                 <div className="">
-                    <h1 className="text-lg font-bold text-[#E38627]">Newsletter Subscribers: {newsletterData.length}</h1>
-                    <h1 className="text-lg font-bold text-[#155E75]">Paid Members: {paymentsData.length}</h1>
+                    <h1 className="text-lg font-bold text-[#E38627]">Newsletter Subscribers: {newsletterData?.length}</h1>
+                    <h1 className="text-lg font-bold text-[#155E75]">Paid Members: {paymentsData?.length}</h1>
                 </div>
             </div>
         </div>

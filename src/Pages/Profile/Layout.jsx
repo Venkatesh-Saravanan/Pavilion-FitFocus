@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 const Layout = () => {
     return (
         <div className="container mx-auto">
-            <div className="grid grid-cols-5">
+            <div className="grid grid-cols-5 h-full  ">
                 <div className="col-span-1">
                     <Sidebar></Sidebar>
                 </div>

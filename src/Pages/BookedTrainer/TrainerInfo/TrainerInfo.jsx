@@ -100,7 +100,7 @@ const axiosSecurePrivate = useAxiosSecurePrivate()
 
             </div>
             <div onClick={() => document.getElementById('my_modal_5').showModal()} className=" flex justify-center items-center -mt-20 ">
-                <button className="btn bg-green-500 text-white font-bold px-5 py-2">Review</button>
+                <button className="btn bg-[#1E1743] text-white font-bold px-5 py-2">Review</button>
             </div>
 
 
@@ -163,7 +163,7 @@ const axiosSecurePrivate = useAxiosSecurePrivate()
                 </select>
             </div>
             <div className="flex items-center justify-between">
-                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <button type="submit" className="bg-[#1E1743] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Submit
                 </button>
             </div>

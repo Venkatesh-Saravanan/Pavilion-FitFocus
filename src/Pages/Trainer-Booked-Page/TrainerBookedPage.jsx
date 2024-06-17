@@ -10,7 +10,7 @@ const TrainerBookedPage = () => {
     const axiosSecurePrivte = useAxiosSecurePrivate()
     const { id, time } = useParams();
     const [selectedClass, setSelectedClass] = useState('');
-    const [formData, setFormData] = useState(); // Corrected state declaration
+    const [formData, setFormData] = useState(); 
     const navigate = useNavigate();
     const { data: trainer, isLoading, error } = useQuery({
         queryKey: ['TrainerBooked', id],
@@ -53,7 +53,7 @@ const TrainerBookedPage = () => {
     return (
         <div>
 
-            <div className="flex font-Rilway text-xl  flex-col mx-auto bg-slate-200 mt-10 max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex font-Rilway text-xl  flex-col mx-auto bg-slate-200 mt-10 max-w-3xl p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="text-center font-bold text-2xl pb-10 text-[#2F7955]">
                     Book Your Fitness Session
@@ -72,13 +72,17 @@ const TrainerBookedPage = () => {
                         <input disabled id="selectedSlot" type="text" className="block w-full bg-slate-200 border-none" {...register('selectedSlot')} />
                     </div>
 
-                    <div className="form-control">
+                    <div className="form-control ">
+                        <div className="grid grid-cols-2">
                         <label className="block text-gray-700 font-bold text-base label">
-                            <span className="label-text">Select Class</span>
+                            <span className="label-text text-base">Select your Class</span>
                         </label>
-                        <div className="flex flex-wrap w-[80%] mx-auto">
+                      <></>
+                        </div>
+                       
+                        <div className="flex flex-wrap w-[80%] mx-auto ">
                             {classes?.map(cls => (
-                                <div key={cls.className} className="mr-4">
+                                <div key={cls.className} className="mr-4 font-normal">
                                     <input
                                     required
                                     type="radio"
@@ -86,9 +90,9 @@ const TrainerBookedPage = () => {
                                     name="class"
                                     value={cls.className}
                                     onChange={() => setSelectedClass(cls.className)}
-                                    className="mr-2"
+                                    className="mr-2 "
                                     />
-                                    <label className="text-gray-700 font-bold text-base" htmlFor={cls.className}>{cls.className}</label>
+                                    <label className="text-gray-700 font-normal  text-base" htmlFor={cls.className}>{cls.className}</label>
                                 </div>
                             ))}
                         </div>
@@ -103,10 +107,14 @@ const TrainerBookedPage = () => {
                         </select>
                     </div>
                     <h1 className="text-green-500 text-lg mb-4">Please show below to know about our package details</h1>
-                    <button onClick={handleNavigate} type="submit" className="block w-full bg-[#1E1743] text-white font-bold py-2 px-4 rounded mt-4">
+                    <div className="flex item-center justify-center">
+
                    
-                   join
+                    <button onClick={handleNavigate} type="submit" className="block btn bg-[#1E1743] text-white font-bold py-2 px-4 rounded mt-4">
+                   
+                   Join Now
                 </button>
+                </div>
                 </form>
             </div>
 
