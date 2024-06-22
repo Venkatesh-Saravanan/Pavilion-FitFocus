@@ -44,7 +44,7 @@ function AddnewClass() {
   };
   
   return (
-    <div className="lg:w-[50%] shadow-lg mx-auto mt-10 p-5 bg-slate-100 ">
+    <div className="lg:w-[60%] shadow-lg mx-auto mt-10 p-5 bg-slate-100  border border-blue-300">
       <h1 className='text-2xl font-Prata font-bold text-center p-5'>Add New Class</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <div className="form-control w-full">
@@ -101,7 +101,7 @@ function AddnewClass() {
           )}
         </div>
         <div className='flex items-center'>
-        <button type="submit" className="btn mx-auto w-36 btn-primary mt-4">ADD</button>
+        <button type="submit" className="btn mx-auto w-36 bg-[#1E1743] text-white mt-4">ADD</button>
         </div>
         
       </form>

@@ -13,7 +13,7 @@ const AllTrainer = () => {
     return (
         <div>
             
-            <div className="grid grid-cols-3 container mx-auto">
+            <div className="lg:grid grid-cols-3 container mx-auto">
                 {
                     data?.map(trainer=> <Trainer key={trainer._id} trainer={trainer}></Trainer>)
                 }

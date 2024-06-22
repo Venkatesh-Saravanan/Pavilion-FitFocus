@@ -32,6 +32,7 @@ const Header = () => {
   };
 
   return (
+    <div className=''>
     <div className="shadow-2xl w-full font-Rilway container mx-auto">
       <div className="m-0 p-0 shadow-2xl z-10">
         <Navbar fluid rounded>
@@ -107,7 +108,7 @@ const Header = () => {
               </div>
             </NavLink>
            
-            {userData && (userData.role === 'trainer' || userData.role === 'admin') &&(
+            {user && (userData?.role === 'trainer' || userData?.role === 'admin') &&(
               <>
                 <NavLink to="/deshboard" className="font-normal text-base" activeClassName="active">
                   <div className="flex items-center gap-1 justify-center">
@@ -130,6 +131,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Navbar>
       </div>
+    </div>
     </div>
   );
 };

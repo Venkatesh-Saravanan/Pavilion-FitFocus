@@ -49,7 +49,7 @@ const Home = () => {
                     </p>
                     <Link to="/trainers">
                       <button
-                        className="align-middle mr-3 select-none font-Rilway text-lg font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3 px-6 rounded-lg bg-[#1E1743] border m-5 border-[#3aaf01] text-[#fff] hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85]"
+                        className="align-middle mr-3 select-none font-Rilway text-lg font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3 px-6 rounded-lg bg-[#1E1743] border m-5  text-[#fff] hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85]"
                         type="button"
                       >
                         See Our Trainer→
@@ -78,7 +78,7 @@ const Home = () => {
                   </p>
                   <Link to="/trainers">
                     <button
-                      className="align-middle mr-3 select-none font-Rilway text-lg font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3 px-6 rounded-lg bg-[#1E1743] border m-5 border-[#3aaf01] text-[#fff] hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85]"
+                      className="align-middle mr-3 select-none font-Rilway text-lg font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  py-3 px-6 rounded-lg bg-[#1E1743] border m-5 text-[#fff] hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85]"
                       type="button"
                     >
                       See Our Trainer→

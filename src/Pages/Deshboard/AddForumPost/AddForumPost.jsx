@@ -90,7 +90,7 @@ function AddForumPost() {
                 </div>
 
                 <div className='flex items-center'>
-                    <button type="submit" className="btn mx-auto w-36 btn-primary mt-4">Submit</button>
+                    <button type="submit" className="btn mx-auto w-36 bg-[#1E1743] text-white mt-4">Submit</button>
                 </div>
             </form>
         </div>

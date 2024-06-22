@@ -33,11 +33,13 @@ import ActivityLogpage from "../Pages/Profile/ActivityLogpage/ActivityLogpage";
 import BookedTrainers from "../Pages/BookedTrainer/BookedTrainers";
 import DeshboardHome from "../Components/DeshboardHome/DeshboardHome";
 import PaymentHistory from "../Pages/PaymentPage/PaymentHistory";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root/>,
+      errorElement:<ErrorPage/>,
       children: [
         {
             path:"/",

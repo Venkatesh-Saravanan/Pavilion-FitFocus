@@ -23,8 +23,8 @@ const AboutSection = () => {
                         </p>
                         <hr className='-ml-0 mb-5 h-[1px] border-none bg-slate-400 mx-auto w-[100%]' />
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                            <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold rounded bg-[#1E1743]  text-white dark:text-gray-50">Suspendisse</a>
-                            <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold border shadow-lg rounded border-gray-100 dark:border-gray-800">Malesuada</a>
+                            <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold rounded bg-[#1E1743]  text-white dark:text-gray-50">Get Started </a>
+                            <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold border shadow-lg rounded border-gray-100 dark:border-gray-800">Know More</a>
                         </div>
                     </div>
                 </div>

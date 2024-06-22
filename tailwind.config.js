@@ -9,6 +9,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        slate: {
+          '950': '#1a202c',
+        },
+        violet: {
+          '600': '#7f5af0',
+        },
+      },
       fontFamily: {
         Rilway: '"Raleway", sans-serif',
         Prata: '"Prata", serif',
@@ -16,5 +24,6 @@ module.exports = {
       }
     },
   },
+  
   plugins: [daisyui, flowbite.plugin()],
 };
