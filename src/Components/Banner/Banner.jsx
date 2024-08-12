@@ -73,7 +73,7 @@ const Home = () => {
                     FITFOCUS: Shape Your Future
                   </h1>
                   <p className="mb-5 text-[#fff] font-semibold">
-                    Welcome to <a className="ml-2 text-2xl font-bold italic text-[#1E1743]">FITFOCUS .</a>
+                    Welcome to <a className="ml-2 text-2xl font-bold italic text-[#1882FF]">FITFOCUS .</a>
                     Your Ultimate Destination for Health, Wellness, and Fitness. Empowering You to Train, Transform, and Achieve Peak Performance Every Day.
                   </p>
                   <Link to="/trainers">

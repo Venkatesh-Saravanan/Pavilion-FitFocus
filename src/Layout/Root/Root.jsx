@@ -9,12 +9,11 @@ const Root = () => {
     if (loading) {
 // set loading
         return <div className="bg-[#1E1743] h-screen flex justify-center items-center">
-            <div>
-                <span className=" text-white m-auto loading loading-spinner w-20"></span>
-                <div className="flex items-center justify-center  -ml-[30%]">
+     
+            <div className="mx-auto text-center">
+                <span className="w-20 text-white  loading loading-spinner "></span>
+                <h1 className="mt-5 mr-10 tracking-widest text-[#FFFFFF] font-Prata font text-5xl">FITFOCUS</h1>
 
-                    <h1 className="mt-5 mr-10 tracking-widest text-[#FFFFFF] font-Prata font text-5xl">FITFOCUS</h1>
-                </div>
             </div>
 
 

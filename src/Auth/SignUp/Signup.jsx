@@ -77,7 +77,7 @@ console.log(data.email)
  }
 
   return (
-    <div className="font-display">
+    <div className="font-display mb-[10%]">
       <div className="pt-5"></div>
       <div className="w-[80%] lg:w-[40%] mx-auto shadow-2xl border border-[#93c4d3] bg-[#fff] rounded-lg pt-5">
         <Helmet>

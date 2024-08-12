@@ -56,7 +56,7 @@ const SocialLogin = () => {
     
     return (
         <div>
-            <div className="w-[40%] mx-auto"><p>---------- OR  ---------</p></div>
+            <div className="lg:w-[40%] md:w-[30%] w-[60%] mx-auto font-bold"><p>---------- OR  ---------</p></div>
             <div className="form-control mt-6">
           <button onClick={handleGoogleLogin} type="submit" className="btn text-xl bg-slate-300"><FcGoogle />Google </button>
           <button onClick={handleGithubLogin} type="submit" className="btn text-xl mt-5 bg-slate-300"><FaGithub />Github </button>

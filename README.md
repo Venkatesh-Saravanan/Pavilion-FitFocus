@@ -58,6 +58,7 @@ FitFocus is a comprehensive fitness management platform designed to streamline c
 
 1. **Clone the repository:**
   
+<<<<<<< HEAD
        git clone "https://github.com/Tahsin411934/FITFOCUS-client.git"
 
 2. **Install Dependencies:**
@@ -66,5 +67,15 @@ FitFocus is a comprehensive fitness management platform designed to streamline c
 2. **Run Project:**
   
        npm run dev
+=======
+     git clone "https://github.com/Tahsin411934/FITFOCUS-client.git"
+
+2. **Install Dependencies:**
+  
+     npm i
+2. **Run Project:**
+  
+     npm run dev
+>>>>>>> 03f3d74 (review section edited)
 ## Thank You
 
