@@ -7,7 +7,7 @@ const Footer = () => {
                     <div className="flex items-center justify-center w-12 h-12 rounded-full ">
                     <img src="https://i.ibb.co/zXvSWPK/logo-removebg-preview.png" className="bg-white rounded-full -12 mr-3 w-24 h-24 sm:h-9" alt="PlateswapLogo" />
                     </div>
-                    <span className="self-center text-2xl font-semibold">FITFOCUS</span>
+                    <span className="self-center text-2xl font-semibold">PAVILION FITFOCUS</span>
                 </a>
             </div>
             <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
@@ -75,7 +75,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className="py-6 text-sm text-center text-gray-400 dark:text-gray-600">© 2024 Abrar Fahim. All rights reserved.</div>
+        <div className="py-6 text-sm text-center text-gray-400 dark:text-gray-600">© 2024 Pavilion FitFocus. All rights reserved.</div>
     </footer>
     );
 };
