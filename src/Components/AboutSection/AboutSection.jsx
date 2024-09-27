@@ -19,7 +19,7 @@ const AboutSection = () => {
                         </h1>
                         <hr className='-ml-0 mt-5 h-[1px] border-none bg-slate-400 mx-auto w-[100%]' />
                         <p className="mt-6  text-lg sm:mb-12">
-                            Welcome to FitFocus – your ultimate fitness companion! At FitFocus, we're dedicated to helping you achieve your fitness goals and lead a healthier lifestyle. Our platform provides intuitive tools and expert guidance to support you every step of the way. Join our community today and discover the power of focused fitness for a happier, healthier you.
+                            Welcome to Pavilion FitFocus – your ultimate fitness companion! At FitFocus, we're dedicated to helping you achieve your fitness goals and lead a healthier lifestyle. Our platform provides intuitive tools and expert guidance to support you every step of the way. Join our community today and discover the power of focused fitness for a happier, healthier you.
                         </p>
                         <hr className='-ml-0 mb-5 h-[1px] border-none bg-slate-400 mx-auto w-[100%]' />
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
