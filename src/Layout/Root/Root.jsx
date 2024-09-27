@@ -12,7 +12,7 @@ const Root = () => {
      
             <div className="mx-auto text-center">
                 <span className="w-20 text-white  loading loading-spinner "></span>
-                <h1 className="mt-5 mr-10 tracking-widest text-[#FFFFFF] font-Prata font text-5xl">FITFOCUS</h1>
+                <h1 className="mt-5 mr-10 tracking-widest text-[#FFFFFF] font-Prata font text-5xl">PAVILION FITFOCUS</h1>
 
             </div>
 
