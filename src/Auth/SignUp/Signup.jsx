@@ -81,11 +81,11 @@ console.log(data.email)
       <div className="pt-5"></div>
       <div className="w-[80%] lg:w-[40%] mx-auto shadow-2xl border border-[#93c4d3] bg-[#fff] rounded-lg pt-5">
         <Helmet>
-          <title>FITFOCUS | Signup</title>
+          <title>PAVILION FITFOCUS | Signup</title>
         </Helmet>
         <h1 className=" text-center text-2xl font-bold italic">
-        Welcome To  <span className=" font-bold text-[#0C7EA0]">FITFOCUS</span> <span className="font-bold">!</span>
-        <h1 className="text-xs text-[#424242] font-normal mt-1">Welcome to <span className=" font-bold text-[#006aff]">FITFOCUS</span> <span className="font-bold">!</span>  Sign In to continue</h1>
+        Welcome To  <span className=" font-bold text-[#0C7EA0]">PAVILION FITFOCUS</span> <span className="font-bold">!</span>
+        <h1 className="text-xs text-[#424242] font-normal mt-1">Welcome to <span className=" font-bold text-[#006aff]">PAVILION FITFOCUS</span> <span className="font-bold">!</span>  Sign In to continue</h1>
       </h1>
         
         {/* form start */}
