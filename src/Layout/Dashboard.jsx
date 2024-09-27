@@ -13,7 +13,7 @@ const Dashboard = () => {
                 <span className=" text-white m-auto loading loading-spinner w-20"></span>
                 <div className="flex items-center justify-center  -ml-[30%]">
 
-                    <h1 className="mt-5 mr-10 tracking-widest text-[#FFFFFF] font-Prata font text-5xl">FITFOCUS</h1>
+                    <h1 className="mt-5 mr-10 tracking-widest text-[#FFFFFF] font-Prata font text-5xl">PAVILION FITFOCUS</h1>
                 </div>
             </div>
 
