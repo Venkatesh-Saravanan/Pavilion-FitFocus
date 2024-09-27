@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="container mx-auto ">
       <Helmet>
-        <title>FITFOCUS | Home</title>
+        <title>PAVILION FITFOCUS | Home</title>
       </Helmet>
       <div className='relative font-Poppins'>
         <Swiper
@@ -41,10 +41,10 @@ const Home = () => {
                 <div className="hero-content  text-center text-neutral-content animate__animated animate__fadeInUp animate__slower">
                   <div className="lg:max-w-lg md:max-w-md w-[100%]  lg:w-[100%]">
                     <h1 className="mb- text-xl lg:text-3xl font-bold text-[#000] p-3 bg-opacity-5  font-Prata">
-                      FITFOCUS: Shape Your Future
+                      PAVILION FITFOCUS: Shape Your Future
                     </h1>
                     <p className="mb-5 text-[#fff] font-semibold">
-                      Welcome to <a className="ml-2 text-2xl font-bold italic text-[#1882FF]">FITFOCUS .</a>
+                      Welcome to <a className="ml-2 text-2xl font-bold italic text-[#1882FF]">PAVILION FITFOCUS </a>
                       Your Ultimate Destination for Health, Wellness, and Fitness. Empowering You to Train, Transform, and Achieve Peak Performance Every Day.
                     </p>
                     <Link to="/trainers">
@@ -70,10 +70,10 @@ const Home = () => {
               <div className="hero-content text-center text-neutral-content animate__animated animate__fadeInUp animate__slower">
                 <div className="lg:max-w-lg md:max-w-md w-[100%]  lg:w-[100%]">
                   <h1 className="mb- text-xl lg:text-3xl font-bold text-[#fff] p-3 bg-opacity-5  font-Prata">
-                    FITFOCUS: Shape Your Future
+                    PAVILION FITFOCUS: Shape Your Future
                   </h1>
                   <p className="mb-5 text-[#fff] font-semibold">
-                    Welcome to <a className="ml-2 text-2xl font-bold italic text-[#1882FF]">FITFOCUS .</a>
+                    Welcome to <a className="ml-2 text-2xl font-bold italic text-[#1882FF]">PAVILION FITFOCUS </a>
                     Your Ultimate Destination for Health, Wellness, and Fitness. Empowering You to Train, Transform, and Achieve Peak Performance Every Day.
                   </p>
                   <Link to="/trainers">
