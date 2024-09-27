@@ -1,10 +1,6 @@
-# FitFocus
+# Pavilion FitFocus
 
-visit : https://assignment-12af.netlify.app/
-
-
-
-FitFocus is a comprehensive fitness management platform designed to streamline class bookings, trainer applications, and community engagement. The platform offers a robust set of features tailored for users, trainers, and administrators, enhancing the fitness experience for all stakeholders.
+Pavilion FitFocus is a comprehensive fitness management platform designed to streamline class bookings, trainer applications, and community engagement. The platform offers a robust set of features tailored for users, trainers, and administrators, enhancing the fitness experience for all stakeholders.
 
 ## Features
 
@@ -53,29 +49,3 @@ FitFocus is a comprehensive fitness management platform designed to streamline c
 
 - **Backend**: Built with Node.js and Express, utilizing MongoDB for data storage.
 - **Frontend**: Developed using React for a responsive and interactive user interface.
-- **Authentication**: Secure authentication using JWT tokens and OAuth for social logins.
-### Installation
-
-1. **Clone the repository:**
-  
-<<<<<<< HEAD
-       git clone "https://github.com/Tahsin411934/FITFOCUS-client.git"
-
-2. **Install Dependencies:**
-  
-       npm i
-2. **Run Project:**
-  
-       npm run dev
-=======
-     git clone "https://github.com/Tahsin411934/FITFOCUS-client.git"
-
-2. **Install Dependencies:**
-  
-     npm i
-2. **Run Project:**
-  
-     npm run dev
->>>>>>> 03f3d74 (review section edited)
-## Thank You
-
