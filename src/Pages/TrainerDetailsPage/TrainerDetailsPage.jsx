@@ -34,7 +34,7 @@ const TrainerDetailsPage = () => {
             <section className="py-6 container mx-auto bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 shadow-xl">
                 <div className="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">
                     <h1 className="text-5xl font-bold leading-none text-center font-Prata">Be A Trainer</h1>
-                    <p className="text-xl font-medium text-center">At FitFocus, we pride ourselves on having an elite team of dedicated trainers who are passionate about helping you achieve your fitness goals. </p>
+                    <p className="text-xl font-medium text-center">At Pavilion FitFocus, we pride ourselves on having an elite team of dedicated trainers who are passionate about helping you achieve your fitness goals. </p>
                     <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
                         <Link to={"/beATrainer"}>
                             <button className="px-8 py-3 text-lg font-semibold rounded bg-[#1E1743]  text-gray-50 dark:text-gray-900">Be A Trainer</button>
