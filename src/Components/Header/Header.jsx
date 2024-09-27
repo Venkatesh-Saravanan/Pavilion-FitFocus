@@ -43,7 +43,7 @@ const Header = () => {
               alt="PlateswapLogo"
             />
             <span className="self-center uppercase whitespace-nowrap text-2xl font-semibold dark:text-white italic">
-              FitFocus
+              Pavilion FitFocus
             </span>
           </Navbar.Brand>
           <div className="flex md:order-2">
